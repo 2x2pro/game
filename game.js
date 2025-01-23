@@ -1,318 +1,146 @@
-$(document).ready(function () {
-  //fallback for safari as it doesn't support vh
-  if (
-    navigator.userAgent.search("Safari") >= 0 &&
-    navigator.userAgent.search("Chrome") < 0
-  ) {
-    $(".game").height($(window).height() * 0.9);
+const cards = ["piggy-bank", "shoe", "plane", "suitcase", "robot", "ring", "palm-tree", "mp3"]
+const gameContainer = document.querySelector(".game")
+const timer = document.querySelector(".timer")
+const startButton = document.getElementById("start-button")
+let flippedCards = []
+let matchedPairs = 0
+let timeLeft = 30
+let gameStarted = false
+let timerInterval
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+      ;[array[i], array[j]] = [array[j], array[i]]
   }
-
-  var cards = [
-    "piggy-bank",
-    "shoe",
-    "plane",
-    "suitcase",
-    "robot",
-    "ring",
-    "palm-tree",
-    "mp3",
-  ];
-  var pairs = cards.concat(cards); //create pairs of cards
-  var chosenCards = [];
-  var cardsToFlip = [];
-
-  var gameStarted = false;
-  var running = false;
-  var outOfTime = false;
-  var countdownStarted = false;
-  var win = false;
-  var pairCount = 0;
-  var time = 30;
-
-  shuffleArray(pairs); //shuffle cards
-
-  $(".back").each(function (i, element) {
-    $(this).attr("id", pairs[i]); //sets id in DOM for cards, access styles via css
-  });
-
-  $(".flip-container").click(function () {
-    if (!outOfTime) {
-      if (!gameStarted && !running) {
-        //before the game starts, show all cards to the user and flip back
-
-        running = true;
-
-        $(".flip-container").each(function () {
-          $(this).toggleClass("flip");
-        });
-
-        setTimeout(function () {
-          $(".flip-container").each(function () {
-            $(this).toggleClass("flip");
-          });
-
-          gameStarted = true;
-          running = false;
-        }, 2000);
-      } else if (
-        $(this).find(".back").attr("id") == chosenCards[0] &&
-        chosenCards[1] == null &&
-        $(this).hasClass("flip") &&
-        !running
-      ) {
-        running = true;
-
-        chosenCards[0] = null; //if one card has been chosen and then clicked again, flip back over
-        $(this).toggleClass("flip");
-
-        running = false;
-      } else if ($(this).hasClass("flip")) {
-        return; //if the card clicked is already flipped, return
-      } else if (
-        chosenCards[0] == null &&
-        chosenCards[1] == null &&
-        !$(this).hasClass("flip") &&
-        !running
-      ) {
-        if (!countdownStarted) {
-          countdown();
-        }
-
-        running = true;
-
-        chosenCards[0] = $(this).find(".back").attr("id"); //if no cards have been chosen, store the chosen card's in chosenCards[0]
-        $(this).toggleClass("flip");
-
-        running = false;
-      } else if (
-        chosenCards[0] != null &&
-        chosenCards[1] == null &&
-        !$(this).hasClass("flip") &&
-        !running
-      ) {
-        running = true;
-
-        chosenCards[1] = $(this).find(".back").attr("id"); //if no second card has been flipped, store the chosen card's brand in chosenCards[1] and flip it
-        $(this).toggleClass("flip");
-
-        if (chosenCards[0] == chosenCards[1]) {
-          chosenCards[0] = null;
-          chosenCards[1] = null;
-
-          pairCount++;
-
-          if (pairCount == cards.length) {
-            win = true;
-            alert("you win :D");
-            window.location.reload();
-          }
-
-          running = false;
-        } else {
-          //if the brands did not match - empty the chosenCards & flip the cards back over
-
-          cardsToFlip[0] = chosenCards[0];
-          cardsToFlip[1] = chosenCards[1];
-
-          chosenCards[0] = null;
-          chosenCards[1] = null;
-
-          setTimeout(function () {
-            //flip back the chosen cards that did not match
-
-            $("*[id*=" + cardsToFlip[0] + "]").each(function () {
-              $(this).closest(".flip").toggleClass("flip");
-            });
-            $("*[id*=" + cardsToFlip[1] + "]").each(function () {
-              $(this).closest(".flip").toggleClass("flip");
-            });
-
-            running = false;
-          }, 800);
-        }
-      }
-    } else {
-      alert("you have run out of time :(");
-      window.location.reload();
-    }
-  }); //Flip Container Click End
-
-  function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-    return array;
-  }
-
-
-
-  function countdown() {
-    countdownStarted = true;
-
-    var timeStart = +new Date();
-    var timer = setInterval(function () {
-      var timeNow = +new Date();
-      var difference = (timeNow - timeStart) / 1000; //calculates time difference if game isn't in focus
-
-      if (time > 0 && !win) {
-        // if there is still time left and game isn't won, deduct time
-
-        time = 30;
-        time = Math.floor(time - difference);
-        $(".timer").text(time);
-      } else if (win) {
-        //stop timer when game is won
-
-        clearInterval(timer);
-      } else {
-        //stop timer when time is run out
-
-        outOfTime = true;
-        alert("you have run out of time :(");
-        window.location.reload();
-
-        clearInterval(timer);
-      }
-    }, 250);
-  }
-
-  // codes
-  setTimeout(() => {
-    $("#splash-screen").hide();
-  }, 5000); // set time to show splash screen
-
-  gsap.to("#splash-img", { duration: 4.5, scale: 40 });
-});
-
-
-var container = document.querySelector('.parallax-container');
-var base = document.querySelector('.parallax-base');
-
-
-cssParallax(container, base, 20);
-
-function cssParallax(cont, el, radiusVal){
-  cont.addEventListener('mousemove', function(event) {
-        
-     var x = window.innerWidth;
-      var y = window.innerHeight;
-    
-      cx = Math.ceil(x / 2.0);
-      cy = Math.ceil(y / 2.0);
-      dx = event.pageX - cx;
-      dy = event.pageY - cy;
-      
-      tiltx = (dy / cy)*0.1;
-      tilty = - (dx / cx)*0.3; 
-
-      radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
-      degree = (radius * radiusVal);
-
-      el.style.transform = 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)';
-  });
+  return array
 }
 
+function flipCard() {
+  if (!gameStarted || flippedCards.length >= 2 || this.classList.contains("flip")) return
 
+  this.classList.add("flip")
+  flippedCards.push(this)
 
+  if (flippedCards.length === 2) {
+    setTimeout(checkMatch, 1000)
+  }
+}
 
+function checkMatch() {
+  const [card1, card2] = flippedCards
+  const type1 = card1.querySelector(".back").id
+  const type2 = card2.querySelector(".back").id
 
-    function onDeviceMotion(event) {
-      rotateForce = 10; // max popup rotation in deg
-     
+  if (type1 === type2) {
+    matchedPairs++
+    if (matchedPairs === cards.length) {
+      endGame(true)
+    }
+  } else {
+    card1.classList.remove("flip")
+    card2.classList.remove("flip")
+  }
+  flippedCards = []
+}
 
-      var docX = window.innerWidth;
-      var docY = window.innerHeight;
+function startGame() {
+  if (gameStarted) return // Prevent starting the game multiple times
+  gameStarted = true
+  startButton.style.display = "none" // Hide the start button
 
-      var accelX = event.beta;  
-      var accelY = event.gamma; 
- 
-      base.style.transform='rotateX(' + accelX + 'deg' + ') rotateY(' + accelY + 'deg' + ')';
-    };
-    window.addEventListener('deviceorientation', onDeviceMotion, false);
- 
-
-
-
-var basicTimeline = anime.timeline({ 
-  loop: true
-});
-var dauer = 400;
-basicTimeline
-  .add({
-   targets: '#flash_1',
-  opacity:[0, 1, 0, 1, 0],
-  translateX: function() { return anime.random(-30, 150); },
-  duration: dauer,
-  offset: 5700
+  // Flip all cards
+  document.querySelectorAll(".flip-container").forEach((card) => {
+    card.classList.add("flip")
   })
-.add({
-   targets: '.lines',
-  stroke:[
-    {value: '#000'}, 
-    {value: '#f00'}, 
-    {value: '#000'}, 
-    {value: '#f00'}, 
-    {value: '#000'}, 
-    
-  ],
-  duration: dauer,
-  offset: '-=400'
-  })
-.add({
-   targets: '.stones',
-  fill:[
-    {value: '#000'}, 
-    {value: '#555'}, 
-    {value: '#000'}, 
-    {value: '#555'}, 
-    {value: '#000'}, 
-    
-  ],
-  duration:dauer,
-  offset: '-=400'
-  })
-  .add({
-     targets: '#flash_2',
-  opacity:[0, 1, 0, 1, 0],
-  translateX: function() { return anime.random(-30, 150); },
-  duration:dauer,
-  offset: 7700
-  })
-.add({
-   targets: '.lines',
-  stroke:[
-    {value: '#000'}, 
-    {value: '#f00'}, 
-    {value: '#000'}, 
-    {value: '#f00'}, 
-    {value: '#000'}, 
-    
-  ],
-  duration:dauer,
-  offset: '-=400'
-  })
-.add({
-   targets: '.stones',
-  fill:[
-    {value: '#000'}, 
-    {value: '#555'}, 
-    {value: '#000'}, 
-    {value: '#555'}, 
-    {value: '#000'}, 
-    
-  ],
-  duration:dauer,
-  offset: '-=400'
-  })
-.add({
-     targets: 'text',
-  opacity:[0, 1, 0, 1, 0],
-    duration:dauer+1000,
-  offset:  '-=400'
-  })
-;
 
+  // After 2 seconds, flip them back and start the timer
+  setTimeout(() => {
+    document.querySelectorAll(".flip-container").forEach((card) => {
+      card.classList.remove("flip")
+    })
+
+    // Show the SweetAlert after cards are flipped back
+    Swal.fire({
+      title: "Game Started!",
+      text: "Match all the pairs before time runs out!",
+      icon: "info",
+      timer: 2000,
+      showConfirmButton: false,
+    })
+
+    timerInterval = setInterval(() => {
+      timeLeft--
+      timer.textContent = timeLeft
+      if (timeLeft === 0) {
+        endGame(false)
+      }
+    }, 1000)
+  }, 2000)
+}
+
+function endGame(isWin) {
+  clearInterval(timerInterval)
+  gameStarted = false
+  startButton.style.display = "block" // Show the start button again
+  if (isWin) {
+    Swal.fire({
+      title: "Congratulations!",
+      text: "You won the game!",
+      icon: "success",
+      confirmButtonText: "Play Again",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        location.reload()
+      }
+    })
+  } else {
+    Swal.fire({
+      title: "Game Over",
+      text: "Time's up!",
+      icon: "error",
+      confirmButtonText: "Try Again",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        location.reload()
+      }
+    })
+  }
+}
+
+function initGame() {
+  const cardPairs = shuffleArray([...cards, ...cards])
+  const flipContainers = document.querySelectorAll(".flip-container")
+  flipContainers.forEach((container, index) => {
+    const backElement = container.querySelector(".back")
+    backElement.id = cardPairs[index]
+    container.addEventListener("click", flipCard)
+  })
+  startButton.addEventListener("click", startGame)
+}
+
+// Splash screen and starting animation
+const splashScreen = document.getElementById("splash-screen")
+const splashImg = document.getElementById("splash-img")
+
+// Function to start the game after splash screen
+function startGameAfterSplash() {
+  splashScreen.style.opacity = "0"
+  setTimeout(() => {
+    splashScreen.style.display = "none"
+    startButton.style.display = "block" // Show the start button
+  }, 500)
+}
+
+// Start the splash screen animation
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    splashImg.classList.add("animate")
+  }, 100)
+
+  // End the splash screen animation and show the start button
+  setTimeout(startGameAfterSplash, 5000)
+})
+
+initGame()
 
