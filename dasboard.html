@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F1114;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-[#1A1B1E] border-b border-gray-800">
+        <div class="flex items-center h-16 px-4 gap-4">
+            <button class="lg:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+            <a href="#" class="flex items-center gap-2">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20(324)-pHwOsGPHReQmzB2cwxDpUtQV9exIKG.png" alt="CrazyGames" class="w-8 h-8">
+                <span class="text-white font-bold hidden sm:inline-block">Zingo.gg</span>
+            </a>
+
+            <div class="flex-1 max-w-xl mx-[21rem]">
+                <div class="relative">
+                    <input type="search" placeholder="Search" 
+                           class="w-full bg-[#2A2B30] text-white rounded-full px-4 py-2 pl-4 pr-10 focus:outline-none">
+                    <svg class="absolute right-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- <div class="flex items-center gap-2">
+                <button class="text-white">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
+                <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md">
+                    Log in
+                </button>
+            </div> -->
+        </div>
+    </header>
+
+    <!-- Login Banner -->
+
+    <!-- <div class="bg-purple-600 text-white text-center py-3 mt-16">
+        <p class="flex items-center justify-center gap-2">
+            Don't lose your progress! 
+            <button class="bg-white text-purple-600 px-4 py-1 rounded-full text-sm font-medium hover:bg-gray-100 relative">
+                Log in now
+                <span class="absolute top-0 right-0 bg-yellow-500 text-white text-[10px] font-bold px-2 py-[2px] rounded-full -mt-2 -mr-3">
+                    Coming Soon
+                </span>
+            </button>
+        </p>
+    </div> -->
+
+    <div class="bg-purple-600 text-white text-center py-3 mt-16">
+        <p class="flex items-center justify-center gap-2">
+            Don't lose your progress! 
+            <button class="bg-white text-purple-600 px-4 py-1 rounded-full text-sm font-medium hover:bg-gray-100 relative overflow-visible">
+                Log in now
+                <span class="absolute -top-3 right-0 bg-yellow-500 text-white text-[10px] font-bold px-2 py-[2px] rounded-full">
+                    Coming Soon
+                </span>
+            </button>
+        </p>
+    </div>
+    
+    
+
+    <!-- Main Content -->
+    <div class="flex flex-col lg:flex-row gap-6 p-4">
+        <!-- Game Section -->
+        <main class="flex-1">
+            <div class="bg-[#1A1B1E] rounded-lg overflow-hidden">
+                <!-- Game Display Area -->
+                <!-- <div id="gameContainer" class="aspect-video bg-[#0F1114] flex flex-col items-center justify-center gap-4 relative">
+                     <img src="we.gif" alt="Mix Match" class="w-48 h-48 rounded-lg">
+                    <h1 class="text-white text-3xl font-bold">Mix Match</h1>
+                    <button id="playButton" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full flex items-center gap-2">
+                        Play Now
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                    <iframe id="gameIframe" src="https://games.cdn.famobi.com/html5games/g/garden-bloom/v560/?fg_domain=play.famobi.com&fg_aid=A1000-111&fg_uid=3f504f07-d674-4a4d-a02e-89e7414d8f26&fg_pid=e37ab3ce-88cd-4438-9b9c-a37df5d33736&fg_beat=262&original_ref=https%3A%2F%2Fplay.famobi.com%2Fgarden-bloom" class="absolute inset-0 w-full h-full hidden"></iframe>
+                </div> -->
+                <div id="gameContainer" class="aspect-video bg-[#0F1114] flex flex-col items-center justify-center gap-4 relative">
+                    <img id="gameImage" src="we.gif" alt="Game Image" class="w-48 h-48 rounded-lg">
+                    <h1 id="gameTitle" class="text-white text-3xl font-bold">Mix Match</h1>
+                    <button id="playButton" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full flex items-center gap-2">
+                        Play Now
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                    <iframe id="gameIframe" src="" class="absolute inset-0 w-full h-full hidden"></iframe>
+                </div>
+                <!-- Game Stats Bar -->
+                <div class="flex items-center gap-4 p-4 border-t border-gray-800">
+                    <div class="flex items-center gap-2">
+                        <img src="/garden.png" alt="Game icon" id="gameminiimage" class="w-8 h-8 rounded-full">
+                        <span id="gameminitext" class="text-white font-medium"></span>
+                    </div>
+                    <div class="flex items-center gap-6 ml-auto">
+                        <button class="flex items-center gap-1 text-gray-400 hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+                            </svg>
+                            <span>1.3K</span>
+                        </button>
+                        <button class="flex items-center gap-1 text-gray-400 hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2z"/>
+                            </svg>
+                            <span>140</span>
+                        </button>
+                        <button class="text-gray-400 hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="w-full lg:w-80">
+            <!-- Mobile Banner -->
+            <!-- <div class="bg-purple-700 rounded-lg p-6 text-white mb-6">
+                <h2 class="text-2xl font-bold mb-2">
+                    Play <span class="text-pink-400">on mobile</span>,
+                    <br>no installs needed
+                </h2>
+                <img src="Zingo_Logo.png" alt="Mobile gaming" class="w-24 h-24 ml-auto">
+            </div> -->
+            <div class="bg-[#4A148C] rounded-lg p-6 text-white mb-6 shadow-lg">
+                <h2 class="text-2xl font-bold mb-2">
+                    Play <span class="text-yellow-400">on mobile</span>,
+                    <br>no installs needed
+                </h2>
+                <img src="Zingo_Logo.png" alt="Mobile gaming" class="w-24 h-24 ml-auto drop-shadow-lg">
+            </div>
+            
+
+            <!-- Similar Games -->
+             
+            <div class="grid gap-4">
+                <a href="dasboard.html" class="game-card" data-game-id="featuresgame1">
+
+                <div class="relative">
+                    <img src="kindom.jpg" alt="Bloxd.io" class="w-full h-32 object-cover rounded-lg">
+                    <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">UPDATED</span>
+                    <h3 class="text-white mt-2">Kindom Fight 2</h3>
+                </div>
+                </a>
+
+                <!-- Add more similar game cards -->
+                <a href="dasboard.html" class="game-card" data-game-id="featuresgame2">
+
+                <div class="relative">
+                    <img src="animal.jpg" alt="Bloxd.io" class="w-full h-32 object-cover rounded-lg">
+                    <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">UPDATED</span>
+                    <h3 class="text-white mt-2">Animal Connection</h3>
+                </div>
+                </a>
+
+                <a href="dasboard.html" class="game-card" data-game-id="featuresgame3">
+
+                    <div class="relative">
+                        <img src="rampage.jpg" alt="Bloxd.io" class="w-full h-32 object-cover rounded-lg">
+                        <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">UPDATED</span>
+                        <h3 class="text-white mt-2">Rampage Racer</h3>
+                    </div>
+                    </a>
+                
+         </aside>
+    </div>
+<!-- Game Description Section -->
+<!-- <div class="text-gray-400 text-center mt-4">
+    <p id="" >This is a fun and engaging game where you can mix and match different elements to create unique combinations. Enjoy the challenge and have fun!</p>
+</div> -->
+
+<!-- How to Play Section -->
+<div class="text-gray-400 text-center mt-2">
+    <h2 class="text-white font-bold">How to Play</h2>
+    <p id="gamehowtoplay">Use your mouse to select and combine different elements. Follow the on-screen instructions to complete </p>
+</div>
+    <!-- Mobile Banner (Bottom) -->
+    <div class="bg-[#4A148C] p-6 mt-6">
+        <div class="max-w-4xl mx-auto flex items-center justify-between">
+            <h2 class="text-2xl font-bold text-white">
+                Play <span class="text-pink-400">on mobile</span>,
+                <br>no installs needed
+            </h2>
+            <img src="Zingo_Logo.png" alt="Mobile gaming" class="w-24 h-24">
+        </div>
+    </div>
+
+    <script>
+ document.addEventListener('DOMContentLoaded', function() {
+        const gameCards = document.querySelectorAll('.game-card');
+        
+        gameCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                const gameId = this.getAttribute('data-game-id');
+                window.location.href = `dasboard.html?game=${gameId}`;
+            });
+        });
+    });
+
+
+
+
+        document.getElementById('playButton').addEventListener('click', function() {
+            const gameContainer = document.getElementById('gameContainer');
+            const gameIframe = document.getElementById('gameIframe');
+            const elementsToHide = gameContainer.querySelectorAll('img, h1, #playButton');
+
+            elementsToHide.forEach(el => el.style.display = 'none');
+            gameIframe.classList.remove('hidden');
+        });
+
+       
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameId = urlParams.get('game');
+
+        if (gameId) {
+            updateGameContent(gameId);
+        }
+    });
+
+    function updateGameContent(gameId) {
+        const gameTitle = document.getElementById('gameTitle');
+        const gameImage = document.getElementById('gameImage');
+        const gameIframe = document.getElementById('gameIframe');
+        const gamehowtoplay = document.getElementById('gamehowtoplay');
+        const gameminitext = document.getElementById('gameminitext');
+        const gameminiimage = document.getElementById('gameminiimage');
+ 
+            
+
+
+        switch(gameId) {
+            case 'mix-match':
+                gameTitle.textContent = 'Mix Match';
+                gameImage.src = 'game/img/halloween.jpg';
+                gameIframe.src = '/game/index.html';
+                 gameminitext.textContent='Mix Match'
+                gameminiimage.src='game/img/halloween.jpg';
+            
+                gamehowtoplay.innerText = `
+How to Play Mix Match
+
+1. Start the Game – Open the game and choose a theme: Barbie, Halloween, or Cars.
+2. Match the Pairs – A grid of cards will appear. Tap or click on two cards to reveal them.
+3. Remember Positions – If the cards don’t match, they will flip back. Try to remember their locations.
+4. Race Against Time – You have 30 seconds to find all matching pairs.
+5. Win or Lose – If you match all pairs within 30 seconds, you win! If time runs out, you lose and can restart.
+
+Tip: Focus on memorizing card positions quickly to win before time runs out!
+`;
+
+
+
+                 break;
+
+            case 'fruity':
+                gameTitle.textContent = 'Fruity Fiesta';
+                gameImage.src = 'Fruity Fiesta.jpg';
+                gameIframe.src = "https://zv1y2i8p.play.gamezop.com/g/mKZZW9NXW";
+                gameminitext.textContent='Fruity Fiesta'
+                gameminiimage.src='Fruity Fiesta.jpg'
+                gamehowtoplay.innerText = `
+How to Play Fruity Fiesta
+
+1. Start the Game – Launch the game and get ready to collect fruits.
+2. Catch the Falling Fruits – Different fruits will drop from the top. Use your basket or character to catch them.
+3. Avoid Rotten Fruits – Be careful! Rotten or bad fruits might also fall—don’t catch them.
+4. Score Points – Each fresh fruit gives points, but catching bad fruits reduces your score.
+5. Beat the Timer – You have a limited time to collect as many fresh fruits as possible.
+6. Win or Lose – If you reach the target score before time runs out, you win! Otherwise, try again.
+
+Tip: Focus on catching high-score fruits and avoid bad ones to maximize your score! 🍎🍊🍓
+`;
+
+                break;
+
+                case 'angrybirds':
+                gameTitle.textContent = 'Angry Birds';
+                gameImage.src = 'angrybirds.jpg';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src = "https://funhtml5games.com?embed=angrybirds"; 
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Angry Birds'
+                gameminiimage.src='angrybirds.jpg'
+                gamehowtoplay.innerText = `
+How to Play Angry Birds
+
+1. Start the Game – Choose a level and get ready to launch your birds.
+2. Aim and Shoot – Use the slingshot to aim and launch birds at the enemy pigs.
+3. Destroy Structures – Pigs hide behind different structures. Break them strategically to eliminate all pigs.
+4. Use Each Bird’s Ability – Some birds have special powers (speed boost, explosion, split, etc.). Use them wisely.
+5. Score High – The fewer birds you use, the higher your score. Earn stars based on your performance.
+6. Win or Lose – Eliminate all pigs to clear the level. If you run out of birds, you’ll have to retry.
+
+Tip: Aim for weak spots in the structures to cause maximum damage with fewer birds! 🐦🎯🐷
+`;
+
+
+
+                break;
+                case 'snake':
+                gameTitle.textContent = 'Snakes and ladders';
+                gameImage.src = 'snake/game-main/snakes-and-ladders/img/SnakeLadder.png';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src = "snake/game-main/snakes-and-ladders/index.html"; 
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Snake and Ladders'
+                gameminiimage.src='snake/game-main/snakes-and-ladders/img/SnakeLadder.png';
+                gamehowtoplay.innerText = `
+How to Play Snakes and Ladders
+
+1. Start the Game – Choose the number of players and begin the match.
+2. Roll the Dice – Click or tap to roll the dice and move forward based on the number shown.
+3. Climb Ladders – Landing at the base of a ladder moves you up to a higher position.
+4. Beware of Snakes – Landing on a snake's head makes you slide down to its tail.
+5. Reach the Finish Line – The first player to reach the final tile (100) wins the game!
+
+Tip: Stay ahead by rolling high numbers and avoiding snakes whenever possible! 🎲🐍🪜
+`;
+
+
+
+                break;
+
+                case 'gloomy':
+                gameTitle.textContent = 'Gloomy';
+                gameImage.src = 'Gloomy/Gloomy/assets/images/intro.png';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src = "Gloomy/Gloomy/index.html"; 
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Gloomy'
+                gameminiimage.src='Gloomy/Gloomy/assets/images/intro.png';
+                gamehowtoplay.innerText = `
+How to Play Gloomy
+
+1. Start the Game – Begin your adventure in a dark and mysterious world.
+2. Navigate the Environment – Use the controls to move, jump, and interact with objects.
+3. Avoid Obstacles – Watch out for traps, enemies, and dangerous areas that can end your journey.
+4. Solve Puzzles – Some levels may require solving puzzles to unlock paths and progress.
+5. Reach the Goal – Advance through the levels by overcoming challenges and reaching the exit.
+
+Tip: Stay alert, explore carefully, and use your surroundings to your advantage! 🌑🎮🕵️
+`;
+
+
+
+                break;
+
+                
+                case 'flames':
+                gameTitle.textContent = 'Flames & Fortune';
+                gameImage.src = 'Gloomy/Gloomy/assets/images/intro.png';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src = "https://zv1y2i8p.play.gamezop.com/g/sOlUZe45d"; 
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Flames & Fortune'
+                gameminiimage.src='Flames & Fortune.jpg';
+                gamehowtoplay.innerText = `
+How to Play Flames & Fortune
+
+1. Start the Game – Enter the names of two people to begin the match.
+2. FLAMES Calculation – The game uses the FLAMES method to determine your relationship type (Friendship, Love, Affection, Marriage, Enemy, or Sibling).
+3. See Your Fortune – Based on the letters in both names, the game calculates and displays the result.
+4. Fun Predictions – Enjoy the result as a lighthearted prediction, not a serious outcome.
+5. Play Again – Try with different names to see various relationship possibilities.
+
+Tip: Flames & Fortune is just for fun! Don’t take the results too seriously—enjoy the game! 🔥💖🎲
+`;
+
+
+
+                break;
+                case 'newgame1':
+                gameTitle.textContent = 'Dragon Annihilation';
+                gameImage.src = 'dragon.jpg';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src = "https://zv1y2i8p.play.gamezop.com/g/PdIZyZNAe";  
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Dragon Annihilation'
+                gameminiimage.src='dragon.jpg'
+            //    "https://funhtml5games.com?embed=gauntlet"  
+            // Add more cases for other games as needed
+            gamehowtoplay.innerText = `
+How to Play Dragon Annihilation
+
+1. Start the Game – Enter the battlefield and prepare to fight against powerful dragons.
+2. Move & Attack – Use the controls to move your character and attack incoming dragons.
+3. Dodge Enemy Attacks – Dragons will breathe fire and launch attacks—avoid them to stay alive.
+4. Upgrade Weapons – Collect power-ups and upgrades to enhance your weapons and abilities.
+5. Defeat All Dragons – Destroy as many dragons as possible before they overpower you.
+6. Survive & Win – The longer you survive and the more dragons you defeat, the higher your score!
+
+Tip: Keep moving, time your attacks well, and use power-ups strategically to win! 🐉🔥⚔️
+`;
+
+            break;
+
+            case 'newgame2':
+            gameTitle.textContent = 'Enchanted Waters';
+            gameImage.src = 'Enchanted Waters.jpg';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src =   "https://zv1y2i8p.play.gamezop.com/g/HJskh679Cr";  
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Enchanted Waters'
+                gameminiimage.src='Enchanted Waters.jpg'
+                gamehowtoplay.innerText = `
+How to Play Enchanted Waters
+
+1. Start the Game – Dive into a magical underwater world filled with hidden secrets.
+2. Swim & Explore – Use the controls to move through the enchanted waters, avoiding obstacles.
+3. Collect Treasures – Gather pearls, coins, and magical artifacts scattered across the ocean.
+4. Beware of Dangers – Watch out for sea creatures, traps, and other underwater hazards.
+5. Complete Challenges – Solve puzzles, unlock hidden areas, and progress through different levels.
+6. Reach the Goal – Successfully collect all treasures and complete your quest to win!
+
+Tip: Stay alert for hidden paths and power-ups that can help you navigate the depths! 🌊🐠🏆
+`;
+
+                
+break;
+// case 'newgame2':
+//                 gameTitle.textContent = 'Bomberman';
+//                 gameImage.src = 'bomberman.png';
+//                 // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+//                 gameIframe.src =   'https://funhtml5games.com?embed=bomberman';  
+//                 // gameIframe.classList.remove("hidden");
+//                 gameminitext.textContent='Bomberman'
+//                 gameminiimage.src='bomberman.png'
+// break;
+
+case 'newgame3':
+                gameTitle.textContent = 'Escape Run';
+                gameImage.src = 'escape.jpg';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src =  "https://zv1y2i8p.play.gamezop.com/g/Skz4pzkDqyX";  
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Escape Run'
+                gameminiimage.src='escape.jpg'
+                gamehowtoplay.innerText = `
+How to Play Escape Run
+
+1. Start the Game – Your character begins running automatically—stay alert!
+2. Dodge Obstacles – Tap, swipe, or use arrow keys to jump, slide, or move sideways to avoid obstacles.
+3. Collect Power-Ups – Grab boosts like speed boosts, shields, or extra lives to enhance your run.
+4. Escape the Pursuer – Keep running and avoid getting caught by enemies or hazards chasing you.
+5. Increase Your Score – The farther you run and the more coins you collect, the higher your score.
+6. Survive as Long as Possible – Keep running and dodging to set a high score!
+
+Tip: React quickly and use power-ups wisely to extend your run! 🏃💨🔥
+`;
+
+break;
+case 'newgame4':
+                gameTitle.textContent = 'Bouncy';
+                gameImage.src = 'bouncy.jpg';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src =  "https://zv1y2i8p.play.gamezop.com/g/H1Tz6z1Dqym"
+;  
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Bouncy'
+                gameminiimage.src='bouncy.jpg'
+                gamehowtoplay.innerText = `
+How to Play Bouncy
+
+1. Start the Game – Tap or click to begin and launch the bouncy ball.
+2. Control the Ball – Use your keyboard or touch controls to guide the ball’s movement.
+3. Avoid Obstacles – Watch out for spikes, moving platforms, and other hazards that can stop your progress.
+4. Bounce on Platforms – Land safely on platforms to keep bouncing and move forward.
+5. Collect Points – Gather coins or bonus items to increase your score.
+6. Reach the Goal – Keep bouncing without falling to achieve the highest score possible!
+
+Tip: Time your jumps carefully and aim for stable platforms to stay in the game! ⚡🏀🎮
+`;
+
+                
+break;
+
+case 'newgame5':
+                gameTitle.textContent = 'Neptuneblue';
+                gameImage.src = 'neptuneblue.png';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src = "https://funhtml5games.com?embed=neptuneblue"
+
+;  
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Neptuneblue'
+                gameminiimage.src='neptuneblue.png'
+                gamehowtoplay.innerText = `
+How to Play NeptuneBlue
+
+1. Start the Game – Dive into the deep waters of planet Neptune to explore its mysteries.
+2. Control Your Submarine – Use the controls to navigate your submarine smoothly.
+3. Avoid Hazards – Watch out for underwater creatures, rocky formations, and hidden traps.
+4. Collect Resources – Gather rare minerals, oxygen tanks, and power-ups to survive longer.
+5. Complete Missions – Follow the game objectives to explore deeper and uncover secrets.
+6. Survive & Escape – Manage your resources wisely and find a way to complete your journey!
+
+Tip: Keep an eye on your oxygen levels and upgrade your submarine for a better chance of survival! 🌊🚀🔵
+`;
+
+                
+break;
+
+case 'newgame6':
+                gameTitle.textContent = 'Pixelminer';
+                gameImage.src = 'pixelminer.png';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src = "https://funhtml5games.com?embed=pixelminer" 
+
+;  
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Pixelminer'
+                gameminiimage.src='pixelminer.png'
+                gamehowtoplay.innerText = `
+How to Play PixelMiner
+
+1. Start the Game – Begin your mining adventure in a pixelated underground world.
+2. Dig for Resources – Use tools to dig deep and collect valuable ores, gems, and minerals.
+3. Upgrade Equipment – Spend collected resources to upgrade your pickaxe, drill, and other tools.
+4. Avoid Hazards – Watch out for underground creatures, falling rocks, and hidden traps.
+5. Expand Your Mine – Unlock new areas, tunnels, and deeper levels for more valuable resources.
+6. Maximize Your Profits – Sell your collected materials and become the richest miner!
+
+Tip: Upgrade your tools frequently to mine faster and unlock rare treasures! ⛏️💎🚀
+`;
+
+                
+break;
+
+
+case 'featuresgame1':
+                gameTitle.textContent = 'Kingdom Fight 2.0';
+                gameImage.src = 'kindom.jpg';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src = "https://zv1y2i8p.play.gamezop.com/g/Rt5ytrd0m"
+
+;  
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Kingdom Fight 2.0'
+                gameminiimage.src='kindom.jpg'
+                gamehowtoplay.innerText = `
+How to Play Kingdom Fight 2.0
+
+1. Start the Game – Choose your warrior and enter the battlefield.
+2. Control Your Character – Use the keyboard or touch controls to move, attack, and defend.
+3. Defeat Enemies – Face off against waves of enemies and powerful bosses.
+4. Upgrade Weapons & Skills – Collect coins and power-ups to enhance your weapons and abilities.
+5. Protect Your Kingdom – Strategize and fight to defend your castle from enemy invasions.
+6. Claim Victory – Defeat all opponents and become the ultimate champion of the kingdom!
+
+Tip: Use special attacks and combos wisely to overpower tough enemies! ⚔️👑🔥
+`;
+
+break;
+case 'featuresgame2':
+                gameTitle.textContent = 'Animal Connection';
+                gameImage.src = 'animal.jpg';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src = "https://zv1y2i8p.play.gamezop.com/g/on1jVCbBn"
+
+;  
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Animal Connection'
+                gameminiimage.src='animal.jpg'
+                gamehowtoplay.innerText = `
+How to Play Animal Connection
+
+1. Start the Game – A board filled with animal tiles will appear.
+2. Match the Pairs – Find and connect two identical animal tiles with a clear path.
+3. Clear the Board – Remove all matching pairs before time runs out to complete the level.
+4. Use Hints & Power-ups – If stuck, use hints or shuffle options to find new matches.
+5. Progress Through Levels – Each level increases in difficulty with new challenges.
+6. Win the Game – Complete all levels and achieve the highest score!
+
+Tip: Look for the shortest possible connection to clear tiles faster! 🐼🦊🐯
+`;
+
+                
+break;
+case 'featuresgame3':
+                gameTitle.textContent = 'Rampage Racer';
+                gameImage.src = 'rampage.jpg';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src = "https://zv1y2i8p.play.gamezop.com/g/p7HOjYF4O"
+
+;  
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Rampage Racer'
+                gameminiimage.src='rampage.jpg'
+                gamehowtoplay.innerText = `
+How to Play Rampage Racer
+
+1. Start the Game – Choose your car and get ready for an action-packed race.
+2. Control Your Vehicle – Use arrow keys or touch controls to steer, accelerate, and brake.
+3. Avoid Obstacles – Dodge traffic, roadblocks, and hazards while maintaining top speed.
+4. Collect Power-ups – Grab nitro boosts, shields, and coins to enhance your performance.
+5. Perform Stunts – Jump over ramps, drift around corners, and earn bonus points.
+6. Win the Race – Reach the finish line first or complete challenges to dominate the race!
+
+Tip: Use nitro at the right moment to overtake rivals and secure victory! 🏎️🔥💨
+`;
+
+break;
+case 'featuresgame4':
+                gameTitle.textContent = 'Zombies Jump';
+                gameImage.src = 'jump.jpg';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src = "https://zv1y2i8p.play.gamezop.com/g/rkxMV8TI6Wg"
+
+;  
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Zombies Jump'
+                gameminiimage.src='jump.jpg'
+                gamehowtoplay.innerText = `
+How to Play Zombies Jump
+
+1. Start the Game – Control a brave survivor running through a zombie-infested world.
+2. Jump to Survive – Tap or press the jump button to leap over obstacles and avoid zombies.
+3. Time Your Jumps – Some zombies are faster; jump at the right moment to stay alive.
+4. Collect Power-ups – Grab shields, speed boosts, and coins to enhance your survival.
+5. Increase Your Score – The longer you survive, the higher your score!
+6. Beat the Challenge – Reach the furthest distance without getting caught by zombies.
+
+Tip: Double jump can help you dodge tricky obstacles! 🧟‍♂️⚡🏃‍♂️
+`;
+
+                
+break;
+case 'featuresgame5':
+                gameTitle.textContent = 'Cyberfusion';
+                gameImage.src = 'cyberfusion.jpg';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src ="https://zv1y2i8p.play.gamezop.com/g/HJXei0j"
+
+;  
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Cyberfusion';
+                gameminiimage.src='cyberfusion.jpg'
+                gamehowtoplay.innerText = `
+How to Play Cyberfusion
+
+1. Start the Game – Enter a high-tech cyber world where you must connect energy nodes.
+2. Control the Grid – Use the mouse or touch controls to drag and link matching nodes.
+3. Complete the Circuit – Form a continuous connection to activate the power flow.
+4. Avoid Overloads – Be strategic with connections to prevent circuit failures.
+5. Advance Through Levels – Each level introduces new challenges and obstacles.
+6. Win the Game – Successfully fuse all circuits to complete the ultimate cyber challenge!
+
+Tip: Plan your moves carefully to create the most efficient energy pathways! ⚡💻🔗
+`;
+
+                
+break;
+case 'featuresgame6':
+                gameTitle.textContent = 'Bubble Wipeout';
+                gameImage.src = 'bubble.jpg';
+                // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
+                gameIframe.src ="https://zv1y2i8p.play.gamezop.com/g/H1AN6fkwqJ7" 
+
+;  
+                // gameIframe.classList.remove("hidden");
+                gameminitext.textContent='Bubble Wipeout'
+                gameminiimage.src='bubble.jpg'
+                gamehowtoplay.innerText = `
+How to Play Bubble Wipeout
+
+1. Start the Game – A board filled with colorful bubbles will appear.
+2. Match & Pop – Tap or click on groups of two or more same-colored bubbles to pop them.
+3. Create Big Combos – The larger the group you pop, the more points you earn!
+4. Watch the Timer – Clear as many bubbles as possible before time runs out.
+5. Use Power-ups – Some bubbles have special effects like bombs or multipliers.
+6. Win the Game – Reach the target score before the timer expires to progress!
+
+Tip: Try to set up chain reactions for higher scores! 🎈💥🔥
+`;
+
+                
+break;
+
+          
+            default:
+                gameTitle.textContent = 'Game Not Found';
+                gameImage.src = '/placeholder.svg';
+                gameIframe.src = '';
+        }
+    }
+
+
+    
+
+    </script>
+</body>
+</html>
