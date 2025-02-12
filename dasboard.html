@@ -129,7 +129,7 @@
             </div>
         </main>
         
-        <script>
+        <!-- <script>
             document.getElementById("fullscreenButton").addEventListener("click", function () {
                 let gameContainer = document.getElementById("gameContainer");
                 if (!document.fullscreenElement) {
@@ -138,9 +138,24 @@
                     });
                 } else {
                     document.exitFullscreen();
-                }
+                } 
             });
-        </script>
+        </script> -->
+        <script>
+        document.getElementById("fullscreenButton").addEventListener("click", function () {
+            let gameContainer = document.getElementById("gameContainer");
+            
+            if (!document.fullscreenElement) {
+                gameContainer.requestFullscreen().then(() => {
+                    if (screen.orientation && screen.orientation.lock) {
+                        screen.orientation.lock("landscape").catch(err => console.log(err));
+                    }
+                }).catch(err => console.log(`Error attempting to enable full-screen mode: ${err.message}`));
+            } else {
+                document.exitFullscreen();
+            }
+        });
+    </script>
         
 
         <!-- Right Sidebar -->
