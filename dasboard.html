@@ -16,24 +16,26 @@
     <!-- Header -->
     <header class="fixed top-0 w-full z-50 bg-[#1A1B1E] border-b border-gray-800">
         <div class="flex items-center h-16 px-4 gap-4">
-            <button class="lg:hidden text-white">
+            <!-- <button class="lg:hidden text-white">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
+                </svg> -->
             </button>
             
             <a href="#" class="flex items-center gap-2">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%20(324)-pHwOsGPHReQmzB2cwxDpUtQV9exIKG.png" alt="CrazyGames" class="w-8 h-8">
+                <img src="Zingo_Logo.png" alt="CrazyGames" class="w-8 h-8">
                 <span class="text-white font-bold hidden sm:inline-block">Zingo.gg</span>
             </a>
-
-            <div class="flex-1 max-w-xl mx-[21rem]">
-                <div class="relative">
-                    <input type="search" placeholder="Search" 
+            <div class="flex-1 max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="relative w-full">
+                    <input type="search" placeholder="Search"
                            class="w-full bg-[#2A2B30] text-white rounded-full px-4 py-2 pl-4 pr-10 focus:outline-none">
                     <svg class="absolute right-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
+                    <span class="absolute -top-3 right-0 bg-yellow-500 text-white text-[10px] font-bold px-2 py-[2px] rounded-full">
+                        Coming Soon
+                    </span>
                 </div>
             </div>
 
@@ -83,18 +85,6 @@
         <!-- Game Section -->
         <main class="flex-1">
             <div class="bg-[#1A1B1E] rounded-lg overflow-hidden">
-                <!-- Game Display Area -->
-                <!-- <div id="gameContainer" class="aspect-video bg-[#0F1114] flex flex-col items-center justify-center gap-4 relative">
-                     <img src="we.gif" alt="Mix Match" class="w-48 h-48 rounded-lg">
-                    <h1 class="text-white text-3xl font-bold">Mix Match</h1>
-                    <button id="playButton" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full flex items-center gap-2">
-                        Play Now
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </button>
-                    <iframe id="gameIframe" src="https://games.cdn.famobi.com/html5games/g/garden-bloom/v560/?fg_domain=play.famobi.com&fg_aid=A1000-111&fg_uid=3f504f07-d674-4a4d-a02e-89e7414d8f26&fg_pid=e37ab3ce-88cd-4438-9b9c-a37df5d33736&fg_beat=262&original_ref=https%3A%2F%2Fplay.famobi.com%2Fgarden-bloom" class="absolute inset-0 w-full h-full hidden"></iframe>
-                </div> -->
                 <div id="gameContainer" class="aspect-video bg-[#0F1114] flex flex-col items-center justify-center gap-4 relative">
                     <img id="gameImage" src="we.gif" alt="Game Image" class="w-48 h-48 rounded-lg">
                     <h1 id="gameTitle" class="text-white text-3xl font-bold">Mix Match</h1>
@@ -104,9 +94,13 @@
                             <path d="M8 5v14l11-7z"/>
                         </svg>
                     </button>
+                    <button id="fullscreenButton" class="absolute top-4 right-4 bg-gray-700 hover:bg-gray-800 text-white p-2 rounded-lg">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7 14H5v5h5v-2H7v-3zm0-4h3V7h2V5H7v5zm7 9h5v-5h-2v3h-3v2zm3-9V7h-3V5h5v5h-2z"/>
+                        </svg>
+                    </button>
                     <iframe id="gameIframe" src="" class="absolute inset-0 w-full h-full hidden"></iframe>
                 </div>
-                <!-- Game Stats Bar -->
                 <div class="flex items-center gap-4 p-4 border-t border-gray-800">
                     <div class="flex items-center gap-2">
                         <img src="/garden.png" alt="Game icon" id="gameminiimage" class="w-8 h-8 rounded-full">
@@ -134,6 +128,20 @@
                 </div>
             </div>
         </main>
+        
+        <script>
+            document.getElementById("fullscreenButton").addEventListener("click", function () {
+                let gameContainer = document.getElementById("gameContainer");
+                if (!document.fullscreenElement) {
+                    gameContainer.requestFullscreen().catch(err => {
+                        console.log(`Error attempting to enable full-screen mode: ${err.message}`);
+                    });
+                } else {
+                    document.exitFullscreen();
+                }
+            });
+        </script>
+        
 
         <!-- Right Sidebar -->
         <aside class="w-full lg:w-80">
@@ -374,7 +382,7 @@ Tip: Stay alert, explore carefully, and use your surroundings to your advantage!
                 
                 case 'flames':
                 gameTitle.textContent = 'Flames & Fortune';
-                gameImage.src = 'Gloomy/Gloomy/assets/images/intro.png';
+                gameImage.src = 'Flames & Fortune.jpg';
                 // gameIframe.src = 'https://play.famobi.com/bubble-tower-3d';
                 gameIframe.src = "https://zv1y2i8p.play.gamezop.com/g/sOlUZe45d"; 
                 // gameIframe.classList.remove("hidden");
