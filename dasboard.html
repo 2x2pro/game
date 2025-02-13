@@ -10,6 +10,29 @@
             font-family: 'Inter', sans-serif;
             background-color: #0F1114;
         }
+        #fullscreenButton {
+    z-index: 20;  
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: #4a5568;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+#fullscreenButton:hover {
+    background-color: #2d3748;
+}
+
+#gameIframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+}
     </style>
 </head>
 <body class="min-h-screen">
@@ -38,7 +61,7 @@
                     </span>
                 </div>
             </div>
-
+          
             <!-- <div class="flex items-center gap-2">
                 <button class="text-white">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,7 +106,7 @@
     <!-- Main Content -->
     <div class="flex flex-col lg:flex-row gap-6 p-4">
         <!-- Game Section -->
-        <main class="flex-1">
+        <!-- <main class="flex-1">
             <div class="bg-[#1A1B1E] rounded-lg overflow-hidden">
                 <div id="gameContainer" class="aspect-video bg-[#0F1114] flex flex-col items-center justify-center gap-4 relative">
                     <img id="gameImage" src="we.gif" alt="Game Image" class="w-48 h-48 rounded-lg">
@@ -128,8 +151,9 @@
                 </div>
             </div>
         </main>
-        
+         -->
         <!-- <script>
+
             document.getElementById("fullscreenButton").addEventListener("click", function () {
                 let gameContainer = document.getElementById("gameContainer");
                 if (!document.fullscreenElement) {
@@ -141,7 +165,55 @@
                 } 
             });
         </script> -->
-        <script>
+        <main class="flex-1">
+    <div class="bg-[#1A1B1E] rounded-lg overflow-hidden">
+        <div id="gameContainer" class="aspect-video bg-[#0F1114] flex flex-col items-center justify-center gap-4 relative">
+            <img id="gameImage" src="we.gif" alt="Game Image" class="w-48 h-48 rounded-lg">
+            <h1 id="gameTitle" class="text-white text-3xl font-bold">Mix Match</h1>
+            <button id="playButton" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full flex items-center gap-2">
+                Play Now
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+            </button>
+            <button id="fullscreenButton" class="absolute top-4 right-4 bg-gray-700 hover:bg-gray-800 text-white p-2 rounded-lg">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M7 14H5v5h5v-2H7v-3zm0-4h3V7h2V5H7v5zm7 9h5v-5h-2v3h-3v2zm3-9V7h-3V5h5v5h-2z"/>
+                </svg>
+            </button>
+            <iframe id="gameIframe" src="" class="absolute inset-0 w-full h-full hidden"></iframe>
+        </div>
+        <div class="flex items-center gap-4 p-4 border-t border-gray-800">
+            <div class="flex items-center gap-2">
+                <img src="/garden.png" alt="Game icon" id="gameminiimage" class="w-8 h-8 rounded-full">
+                <span id="gameminitext" class="text-white font-medium"></span>
+            </div>
+            <div class="flex items-center gap-6 ml-auto">
+                <button class="flex items-center gap-1 text-gray-400 hover:text-white">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+                    </svg>
+                    <span>1.3K</span>
+                </button>
+                <button class="flex items-center gap-1 text-gray-400 hover:text-white">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2z"/>
+                    </svg>
+                    <span>140</span>
+                </button>
+                <button class="text-gray-400 hover:text-white">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+        <!-- <script>
+
+// landsacpe krdega auto
+
         document.getElementById("fullscreenButton").addEventListener("click", function () {
             let gameContainer = document.getElementById("gameContainer");
             
@@ -155,9 +227,28 @@
                 document.exitFullscreen();
             }
         });
-    </script>
+    </script> -->
         
+<script>
+document.getElementById("playButton").addEventListener("click", function () {
+const gameIframe = document.getElementById("gameIframe");
+gameIframe.classList.remove("hidden");  
+});
 
+document.getElementById("fullscreenButton").addEventListener("click", function () {
+let gameContainer = document.getElementById("gameContainer");
+
+if (!document.fullscreenElement) {
+gameContainer.requestFullscreen().then(() => {
+    if (screen.orientation && screen.orientation.lock) {
+        screen.orientation.lock("landscape").catch(err => console.log(err));
+    }
+}).catch(err => console.log(`Error attempting to enable full-screen mode: ${err.message}`));
+} else {
+document.exitFullscreen();
+}
+});
+</script>
         <!-- Right Sidebar -->
         <aside class="w-full lg:w-80">
             <!-- Mobile Banner -->
@@ -217,7 +308,7 @@
 
 <!-- How to Play Section -->
 <div class="text-gray-400 text-center mt-2">
-    <h2 class="text-white font-bold">How to Play</h2>
+    <!-- <h2 class="text-white font-bold">How to Play</h2> -->
     <p id="gamehowtoplay">Use your mouse to select and combine different elements. Follow the on-screen instructions to complete </p>
 </div>
     <!-- Mobile Banner (Bottom) -->
@@ -285,16 +376,41 @@
                  gameminitext.textContent='Mix Match'
                 gameminiimage.src='game/img/halloween.jpg';
             
-                gamehowtoplay.innerText = `
-How to Play Mix Match
+gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">How to Play Mix Match</h2>
 
-1. Start the Game – Open the game and choose a theme: Barbie, Halloween, or Cars.
-2. Match the Pairs – A grid of cards will appear. Tap or click on two cards to reveal them.
-3. Remember Positions – If the cards don’t match, they will flip back. Try to remember their locations.
-4. Race Against Time – You have 30 seconds to find all matching pairs.
-5. Win or Lose – If you match all pairs within 30 seconds, you win! If time runs out, you lose and can restart.
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <ul class="list-disc list-inside text-white">
+    <li>Open the game and choose a theme: Barbie, Halloween, or Cars.</li>
+  </ul>
 
-Tip: Focus on memorizing card positions quickly to win before time runs out!
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Match the Pairs</h3>
+  <ul class="list-disc list-inside text-white">
+    <li>A grid of cards will appear.</li>
+    <li>Tap or click on two cards to reveal them.</li>
+  </ul>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Remember Positions</h3>
+  <ul class="list-disc list-inside text-white">
+    <li>If the cards don’t match, they will flip back.</li>
+    <li>Try to remember their locations for future attempts.</li>
+  </ul>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Race Against Time</h3>
+  <ul class="list-disc list-inside text-white">
+    <li>You have 30 seconds to find all matching pairs.</li>
+  </ul>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Win or Lose</h3>
+  <ul class="list-disc list-inside text-white">
+    <li>If you match all pairs within 30 seconds, you win!</li>
+    <li>If time runs out, you lose and can restart the game.</li>
+  </ul>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <ul class="list-disc list-inside text-white">
+    <li>Focus on memorizing card positions quickly to win before time runs out!</li>
+  </ul>
 `;
 
 
@@ -737,5 +853,6 @@ break;
     
 
     </script>
+  
 </body>
 </html>
