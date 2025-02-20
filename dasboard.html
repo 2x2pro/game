@@ -112,7 +112,7 @@
     
 
     <!-- Main Content -->
-    <div class="flex flex-col lg:flex-row gap-6 p-4">
+    <div class="flex flex-col lg:flex-row gap-12 p-4">
         <!-- Game Section -->
         <!-- <main class="flex-1">
             <div class="bg-[#1A1B1E] rounded-lg overflow-hidden">
@@ -174,7 +174,7 @@
             });
         </script> -->
         <main class="flex-1">
-    <div class="bg-[#1A1B1E] rounded-lg overflow-hidden">
+    <div class="bg-[#1A1B1E] rounded-lg overflow-hidden  ">
         <div id="gameContainer" class="aspect-video bg-[#0F1114] flex flex-col items-center justify-center gap-4 relative">
             <img id="gameImage" src="we.gif" alt="Game Image" class="w-48 h-48 rounded-lg">
             <h1 id="gameTitle" class="text-white text-3xl font-bold">Mix Match</h1>
@@ -315,10 +315,12 @@ document.exitFullscreen();
 </div> -->
 
 <!-- How to Play Section -->
-<div class="text-gray-400 text-center mt-2">
-    <!-- <h2 class="text-white font-bold">How to Play</h2> -->
-    <p id="gamehowtoplay">Use your mouse to select and combine different elements. Follow the on-screen instructions to complete </p>
-</div>
+<div class="bg-gray-800 text-gray-400 ml-2   mr-2  p-6 rounded-2xl shadow-lg   ">
+    <!-- <h2 class="text-white font-bold text-2xl mb-4">How to Play</h2> -->
+    <p id="gamehowtoplay" class="leading-relaxed">
+      Use your mouse to select and combine different elements. Follow the on-screen instructions to complete the tasks and progress through the levels.
+    </p>
+  </div>
     <!-- Mobile Banner (Bottom) -->
     <div class="bg-[#4A148C] p-6 mt-6">
         <div class="max-w-4xl mx-auto flex items-center justify-between">
@@ -455,45 +457,45 @@ document.exitFullscreen();
                 gameIframe.src = '/game/index.html';
                  gameminitext.textContent='Mix Match'
                 gameminiimage.src='game/img/halloween.jpg';
-            
-gamehowtoplay.innerHTML = `
-  <h2 class="text-white font-bold text-2xl">How to Play Mix Match</h2>
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Mix Match - Game Overview</h2>
+  <p class="text-white mt-2">Mix Match is a fun memory card game where you need to match pairs of themed cards within a limited time. Test your memory and quick thinking as you uncover hidden cards to find all matching pairs before time runs out!</p>
 
-  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Themes Available</h3>
   <ul class="list-disc list-inside text-white">
-    <li>Open the game and choose a theme: Barbie, Halloween, or Cars.</li>
+    <li>Barbie</li>
+    <li>Halloween</li>
+    <li>Cars</li>
   </ul>
+
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Mix Match</h2>
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Open the game and select your preferred theme: Barbie, Halloween, or Cars.</p>
 
   <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Match the Pairs</h3>
   <ul class="list-disc list-inside text-white">
-    <li>A grid of cards will appear.</li>
-    <li>Tap or click on two cards to reveal them.</li>
+    <li>A grid of face-down cards will appear.</li>
+    <li>Click or tap two cards to flip them over and reveal their images.</li>
   </ul>
 
-  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Remember Positions</h3>
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Remember Card Positions</h3>
   <ul class="list-disc list-inside text-white">
-    <li>If the cards don’t match, they will flip back.</li>
-    <li>Try to remember their locations for future attempts.</li>
+    <li>If the two flipped cards do not match, they will flip back over.</li>
+    <li>Try to remember the images and their locations for future matches.</li>
   </ul>
 
   <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Race Against Time</h3>
-  <ul class="list-disc list-inside text-white">
-    <li>You have 30 seconds to find all matching pairs.</li>
-  </ul>
+  <p class="text-white">You have 30 seconds to find all matching pairs and complete the game.</p>
 
   <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Win or Lose</h3>
   <ul class="list-disc list-inside text-white">
-    <li>If you match all pairs within 30 seconds, you win!</li>
-    <li>If time runs out, you lose and can restart the game.</li>
+    <li>If you match all pairs within 30 seconds, you win the game!</li>
+    <li>If the time runs out before you match all pairs, the game ends. You can restart and try again.</li>
   </ul>
 
   <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
-  <ul class="list-disc list-inside text-white">
-    <li>Focus on memorizing card positions quickly to win before time runs out!</li>
-  </ul>
+  <p class="text-white">Memorize card positions quickly to make more accurate matches and beat the timer!</p>
 `;
-
-
 
                  break;
 
@@ -503,18 +505,37 @@ gamehowtoplay.innerHTML = `
                 gameIframe.src = "https://zv1y2i8p.play.gamezop.com/g/mKZZW9NXW";
                 gameminitext.textContent='Fruity Fiesta'
                 gameminiimage.src='Fruity Fiesta.jpg'
-                gamehowtoplay.innerText = `
-How to Play Fruity Fiesta
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Fruity Fiesta - Game Overview</h2>
+  <p class="text-white mt-2">Fruity Fiesta is an exciting game where you collect fresh fruits to score points. Avoid rotten fruits and race against the timer to hit your target score!</p>
 
-1. Start the Game – Launch the game and get ready to collect fruits.
-2. Catch the Falling Fruits – Different fruits will drop from the top. Use your basket or character to catch them.
-3. Avoid Rotten Fruits – Be careful! Rotten or bad fruits might also fall—don’t catch them.
-4. Score Points – Each fresh fruit gives points, but catching bad fruits reduces your score.
-5. Beat the Timer – You have a limited time to collect as many fresh fruits as possible.
-6. Win or Lose – If you reach the target score before time runs out, you win! Otherwise, try again.
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Fruity Fiesta</h2>
+  
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Launch the game and get ready to collect fruits.</p>
 
-Tip: Focus on catching high-score fruits and avoid bad ones to maximize your score! 🍎🍊🍓
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Collect Fresh Fruits</h3>
+  <p class="text-white">Catch fresh fruits as they fall to score points. The more fruits you catch, the higher your score.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Avoid Rotten Fruits</h3>
+  <ul class="list-disc list-inside text-white">
+    <li>Be careful! Rotten or bad fruits will also fall.</li>
+    <li>Catching bad fruits will reduce your score.</li>
+  </ul>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Beat the Timer</h3>
+  <p class="text-white">You have a limited time to collect as many fresh fruits as possible.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Win or Lose</h3>
+  <ul class="list-disc list-inside text-white">
+    <li>If you reach the target score before time runs out, you win!</li>
+    <li>If time runs out before you reach the target, the game ends. You can restart and try again.</li>
+  </ul>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Focus on catching high-score fruits and avoid bad ones to maximize your score! 🍎🍊🍓</p>
 `;
+
 
                 break;
 
@@ -526,17 +547,38 @@ Tip: Focus on catching high-score fruits and avoid bad ones to maximize your sco
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Angry Birds'
                 gameminiimage.src='angrybirds.jpg'
-                gamehowtoplay.innerText = `
-How to Play Angry Birds
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Angry Birds - Game Overview</h2>
+  <p class="text-white mt-2">Angry Birds is a fun and challenging physics-based game where you launch birds to defeat enemy pigs hiding behind various structures. Use strategy and aim carefully to score high and clear each level!</p>
 
-1. Start the Game – Choose a level and get ready to launch your birds.
-2. Aim and Shoot – Use the slingshot to aim and launch birds at the enemy pigs.
-3. Destroy Structures – Pigs hide behind different structures. Break them strategically to eliminate all pigs.
-4. Use Each Bird’s Ability – Some birds have special powers (speed boost, explosion, split, etc.). Use them wisely.
-5. Score High – The fewer birds you use, the higher your score. Earn stars based on your performance.
-6. Win or Lose – Eliminate all pigs to clear the level. If you run out of birds, you’ll have to retry.
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Angry Birds</h2>
+  
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Choose a level and get ready to launch your birds.</p>
 
-Tip: Aim for weak spots in the structures to cause maximum damage with fewer birds! 🐦🎯🐷
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Aim and Shoot</h3>
+  <p class="text-white">Use the slingshot to aim and launch birds at the enemy pigs.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Destroy Structures</h3>
+  <p class="text-white">Pigs hide behind different structures. Break them strategically to eliminate all pigs.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Use Each Bird’s Ability</h3>
+  <ul class="list-disc list-inside text-white">
+    <li>Some birds have special powers like speed boosts, explosions, or splitting mid-air.</li>
+    <li>Use each ability wisely to maximize damage.</li>
+  </ul>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Score High</h3>
+  <p class="text-white">The fewer birds you use, the higher your score. Earn stars based on your performance.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">6. Win or Lose</h3>
+  <ul class="list-disc list-inside text-white">
+    <li>Eliminate all pigs to clear the level.</li>
+    <li>If you run out of birds, you’ll have to retry.</li>
+  </ul>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Aim for weak spots in the structures to cause maximum damage with fewer birds! 🐦🎯🐷</p>
 `;
 
 
@@ -550,16 +592,29 @@ Tip: Aim for weak spots in the structures to cause maximum damage with fewer bir
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Snake and Ladders'
                 gameminiimage.src='snake/game-main/snakes-and-ladders/img/SnakeLadder.png';
-                gamehowtoplay.innerText = `
-How to Play Snakes and Ladders
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Snakes and Ladders - Game Overview</h2>
+  <p class="text-white mt-2">Snakes and Ladders is a classic board game of luck where players race to reach the final tile. Use ladders to climb faster but watch out for snakes that can pull you down!</p>
 
-1. Start the Game – Choose the number of players and begin the match.
-2. Roll the Dice – Click or tap to roll the dice and move forward based on the number shown.
-3. Climb Ladders – Landing at the base of a ladder moves you up to a higher position.
-4. Beware of Snakes – Landing on a snake's head makes you slide down to its tail.
-5. Reach the Finish Line – The first player to reach the final tile (100) wins the game!
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Snakes and Ladders</h2>
+  
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Choose the number of players and begin the match.</p>
 
-Tip: Stay ahead by rolling high numbers and avoiding snakes whenever possible! 🎲🐍🪜
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Roll the Dice</h3>
+  <p class="text-white">Click or tap to roll the dice and move forward based on the number shown.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Climb Ladders</h3>
+  <p class="text-white">Landing at the base of a ladder moves you up to a higher position on the board.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Beware of Snakes</h3>
+  <p class="text-white">Landing on a snake’s head makes you slide down to its tail, losing progress.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Reach the Finish Line</h3>
+  <p class="text-white">The first player to reach the final tile (100) wins the game!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Stay ahead by rolling high numbers and avoiding snakes whenever possible! 🎲🐍🪜</p>
 `;
 
 
@@ -574,17 +629,31 @@ Tip: Stay ahead by rolling high numbers and avoiding snakes whenever possible! �
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Gloomy'
                 gameminiimage.src='Gloomy/Gloomy/assets/images/intro.png';
-                gamehowtoplay.innerText = `
-How to Play Gloomy
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Gloomy - Game Overview</h2>
+  <p class="text-white mt-2">Gloomy is an adventure game set in a dark and mysterious world. Explore, overcome obstacles, and solve puzzles to navigate through the challenging levels.</p>
 
-1. Start the Game – Begin your adventure in a dark and mysterious world.
-2. Navigate the Environment – Use the controls to move, jump, and interact with objects.
-3. Avoid Obstacles – Watch out for traps, enemies, and dangerous areas that can end your journey.
-4. Solve Puzzles – Some levels may require solving puzzles to unlock paths and progress.
-5. Reach the Goal – Advance through the levels by overcoming challenges and reaching the exit.
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Gloomy</h2>
 
-Tip: Stay alert, explore carefully, and use your surroundings to your advantage! 🌑🎮🕵️
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Begin your adventure in a dark and mysterious world filled with challenges.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Navigate the Environment</h3>
+  <p class="text-white">Use the game controls to move, jump, and interact with objects as you explore each level.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Avoid Obstacles</h3>
+  <p class="text-white">Watch out for traps, enemies, and dangerous areas that could end your journey.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Solve Puzzles</h3>
+  <p class="text-white">Some levels may contain puzzles that need to be solved to unlock new paths and progress further.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Reach the Goal</h3>
+  <p class="text-white">Overcome all challenges and reach the exit to advance to the next level.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Stay alert, explore carefully, and use your surroundings to your advantage! 🌑🎮🕵️</p>
 `;
+
 
 
 
@@ -599,17 +668,32 @@ Tip: Stay alert, explore carefully, and use your surroundings to your advantage!
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Flames & Fortune'
                 gameminiimage.src='Flames & Fortune.jpg';
-                gamehowtoplay.innerText = `
-How to Play Flames & Fortune
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Flames & Fortune - Game Overview</h2>
+  <p class="text-white mt-2">Flames & Fortune is a fun relationship prediction game based on the names of two people. It uses the FLAMES method to predict the type of relationship in a lighthearted way.</p>
 
-1. Start the Game – Enter the names of two people to begin the match.
-2. FLAMES Calculation – The game uses the FLAMES method to determine your relationship type (Friendship, Love, Affection, Marriage, Enemy, or Sibling).
-3. See Your Fortune – Based on the letters in both names, the game calculates and displays the result.
-4. Fun Predictions – Enjoy the result as a lighthearted prediction, not a serious outcome.
-5. Play Again – Try with different names to see various relationship possibilities.
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Flames & Fortune</h2>
 
-Tip: Flames & Fortune is just for fun! Don’t take the results too seriously—enjoy the game! 🔥💖🎲
-`;
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Enter the names of two people to begin the prediction.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. FLAMES Calculation</h3>
+  <p class="text-white">The game uses the FLAMES method to determine the relationship type: Friendship, Love, Affection, Marriage, Enemy, or Sibling.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. See Your Fortune</h3>
+  <p class="text-white">Based on the letters in both names, the game calculates and displays the result.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Fun Predictions</h3>
+  <p class="text-white">Enjoy the result as a lighthearted prediction for fun, not a serious outcome.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Play Again</h3>
+  <p class="text-white">Try with different names to see various relationship possibilities and have more fun.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Flames & Fortune is just for fun! Don’t take the results too seriously—enjoy the game! 🔥💖🎲</p>
+`;  
+
+
 
 
 
@@ -624,18 +708,34 @@ Tip: Flames & Fortune is just for fun! Don’t take the results too seriously—
                 gameminiimage.src='dragon.jpg'
             //    "https://funhtml5games.com?embed=gauntlet"  
             // Add more cases for other games as needed
-            gamehowtoplay.innerText = `
-How to Play Dragon Annihilation
+            gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Dragon Annihilation - Game Overview</h2>
+  <p class="text-white mt-2">Dragon Annihilation is an action-packed battle game where you fight against powerful dragons in an epic showdown. Test your skills by dodging attacks, upgrading weapons, and defeating as many dragons as possible!</p>
 
-1. Start the Game – Enter the battlefield and prepare to fight against powerful dragons.
-2. Move & Attack – Use the controls to move your character and attack incoming dragons.
-3. Dodge Enemy Attacks – Dragons will breathe fire and launch attacks—avoid them to stay alive.
-4. Upgrade Weapons – Collect power-ups and upgrades to enhance your weapons and abilities.
-5. Defeat All Dragons – Destroy as many dragons as possible before they overpower you.
-6. Survive & Win – The longer you survive and the more dragons you defeat, the higher your score!
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Dragon Annihilation</h2>
 
-Tip: Keep moving, time your attacks well, and use power-ups strategically to win! 🐉🔥⚔️
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Enter the battlefield and get ready to face waves of powerful dragons.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Move & Attack</h3>
+  <p class="text-white">Use the controls to move your character and attack the incoming dragons.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Dodge Enemy Attacks</h3>
+  <p class="text-white">Avoid dragon fire breath and other attacks to stay alive and continue the battle.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Upgrade Weapons</h3>
+  <p class="text-white">Collect power-ups and upgrades to enhance your weapons and abilities for stronger attacks.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Defeat All Dragons</h3>
+  <p class="text-white">Destroy as many dragons as possible before they overpower you.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">6. Survive & Win</h3>
+  <p class="text-white">The longer you survive and the more dragons you defeat, the higher your score will be!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Keep moving, time your attacks well, and use power-ups strategically to win! 🐉🔥⚔️</p>
 `;
+
 
             break;
 
@@ -647,18 +747,34 @@ Tip: Keep moving, time your attacks well, and use power-ups strategically to win
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Enchanted Waters'
                 gameminiimage.src='Enchanted Waters.jpg'
-                gamehowtoplay.innerText = `
-How to Play Enchanted Waters
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Enchanted Waters - Game Overview</h2>
+  <p class="text-white mt-2">Enchanted Waters is an underwater adventure game where you explore a magical ocean filled with hidden treasures and secrets. Navigate through challenges and collect treasures to complete your quest!</p>
 
-1. Start the Game – Dive into a magical underwater world filled with hidden secrets.
-2. Swim & Explore – Use the controls to move through the enchanted waters, avoiding obstacles.
-3. Collect Treasures – Gather pearls, coins, and magical artifacts scattered across the ocean.
-4. Beware of Dangers – Watch out for sea creatures, traps, and other underwater hazards.
-5. Complete Challenges – Solve puzzles, unlock hidden areas, and progress through different levels.
-6. Reach the Goal – Successfully collect all treasures and complete your quest to win!
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Enchanted Waters</h2>
 
-Tip: Stay alert for hidden paths and power-ups that can help you navigate the depths! 🌊🐠🏆
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Dive into the enchanted waters and begin your underwater adventure.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Swim & Explore</h3>
+  <p class="text-white">Use the controls to move through the magical ocean, avoiding obstacles and hazards.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Collect Treasures</h3>
+  <p class="text-white">Gather pearls, coins, and magical artifacts scattered across the ocean floor.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Beware of Dangers</h3>
+  <p class="text-white">Watch out for sea creatures, traps, and other underwater hazards that could end your journey.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Complete Challenges</h3>
+  <p class="text-white">Solve puzzles and unlock hidden areas to progress through different levels.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">6. Reach the Goal</h3>
+  <p class="text-white">Collect all treasures and complete your quest to win the game!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Stay alert for hidden paths and power-ups that can help you navigate the depths! 🌊🐠🏆</p>
 `;
+
 
                 
 break;
@@ -680,18 +796,34 @@ case 'newgame3':
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Escape Run'
                 gameminiimage.src='escape.jpg'
-                gamehowtoplay.innerText = `
-How to Play Escape Run
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Escape Run - Game Overview</h2>
+  <p class="text-white mt-2">Escape Run is an endless runner game where you must dodge obstacles, collect power-ups, and avoid getting caught while running as far as possible. Test your reflexes and aim for a high score!</p>
 
-1. Start the Game – Your character begins running automatically—stay alert!
-2. Dodge Obstacles – Tap, swipe, or use arrow keys to jump, slide, or move sideways to avoid obstacles.
-3. Collect Power-Ups – Grab boosts like speed boosts, shields, or extra lives to enhance your run.
-4. Escape the Pursuer – Keep running and avoid getting caught by enemies or hazards chasing you.
-5. Increase Your Score – The farther you run and the more coins you collect, the higher your score.
-6. Survive as Long as Possible – Keep running and dodging to set a high score!
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Escape Run</h2>
 
-Tip: React quickly and use power-ups wisely to extend your run! 🏃💨🔥
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Your character begins running automatically—stay alert and ready to react!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Dodge Obstacles</h3>
+  <p class="text-white">Tap, swipe, or use arrow keys to jump, slide, or move sideways to avoid obstacles in your path.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Collect Power-Ups</h3>
+  <p class="text-white">Grab boosts like speed boosts, shields, or extra lives to enhance your run and extend your survival.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Escape the Pursuer</h3>
+  <p class="text-white">Keep running and avoid getting caught by enemies or hazards chasing you.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Increase Your Score</h3>
+  <p class="text-white">The farther you run and the more coins you collect, the higher your score will be.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">6. Survive as Long as Possible</h3>
+  <p class="text-white">Keep running and dodging to set a high score and push your limits!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">React quickly and use power-ups wisely to extend your run and stay ahead! 🏃💨🔥</p>
 `;
+
 
 break;
 case 'newgame4':
@@ -703,17 +835,32 @@ case 'newgame4':
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Bouncy'
                 gameminiimage.src='bouncy.jpg'
-                gamehowtoplay.innerText = `
-How to Play Bouncy
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Bouncy - Game Overview</h2>
+  <p class="text-white mt-2">Bouncy is an exciting game where you control a ball to navigate platforms, avoid obstacles, and collect points. Keep bouncing to stay in the game and aim for the highest score!</p>
 
-1. Start the Game – Tap or click to begin and launch the bouncy ball.
-2. Control the Ball – Use your keyboard or touch controls to guide the ball’s movement.
-3. Avoid Obstacles – Watch out for spikes, moving platforms, and other hazards that can stop your progress.
-4. Bounce on Platforms – Land safely on platforms to keep bouncing and move forward.
-5. Collect Points – Gather coins or bonus items to increase your score.
-6. Reach the Goal – Keep bouncing without falling to achieve the highest score possible!
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Bouncy</h2>
 
-Tip: Time your jumps carefully and aim for stable platforms to stay in the game! ⚡🏀🎮
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Tap or click to begin and launch the bouncy ball into action.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Control the Ball</h3>
+  <p class="text-white">Use your keyboard or touch controls to guide the ball’s movement and keep it bouncing.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Avoid Obstacles</h3>
+  <p class="text-white">Watch out for spikes, moving platforms, and other hazards that can stop your progress.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Bounce on Platforms</h3>
+  <p class="text-white">Land safely on platforms to keep bouncing and move forward in the game.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Collect Points</h3>
+  <p class="text-white">Gather coins or bonus items to increase your score and aim for a high score.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">6. Reach the Goal</h3>
+  <p class="text-white">Keep bouncing without falling to achieve the highest score possible and challenge your limits!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Time your jumps carefully and aim for stable platforms to stay in the game and maximize your score! ⚡🏀🎮</p>
 `;
 
                 
@@ -729,18 +876,34 @@ case 'newgame5':
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Neptuneblue'
                 gameminiimage.src='neptuneblue.png'
-                gamehowtoplay.innerText = `
-How to Play NeptuneBlue
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">NeptuneBlue - Game Overview</h2>
+  <p class="text-white mt-2">NeptuneBlue is an underwater adventure game where you explore the mysterious depths of planet Neptune. Navigate your submarine, collect resources, and uncover hidden secrets while avoiding hazards!</p>
 
-1. Start the Game – Dive into the deep waters of planet Neptune to explore its mysteries.
-2. Control Your Submarine – Use the controls to navigate your submarine smoothly.
-3. Avoid Hazards – Watch out for underwater creatures, rocky formations, and hidden traps.
-4. Collect Resources – Gather rare minerals, oxygen tanks, and power-ups to survive longer.
-5. Complete Missions – Follow the game objectives to explore deeper and uncover secrets.
-6. Survive & Escape – Manage your resources wisely and find a way to complete your journey!
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play NeptuneBlue</h2>
 
-Tip: Keep an eye on your oxygen levels and upgrade your submarine for a better chance of survival! 🌊🚀🔵
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Dive into the deep waters of planet Neptune to explore its mysteries and begin your adventure.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Control Your Submarine</h3>
+  <p class="text-white">Use the controls to navigate your submarine smoothly through Neptune's underwater environment.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Avoid Hazards</h3>
+  <p class="text-white">Watch out for underwater creatures, rocky formations, and hidden traps that can end your journey.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Collect Resources</h3>
+  <p class="text-white">Gather rare minerals, oxygen tanks, and power-ups to extend your survival time and improve your progress.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Complete Missions</h3>
+  <p class="text-white">Follow game objectives to explore deeper areas and uncover Neptune's hidden secrets.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">6. Survive & Escape</h3>
+  <p class="text-white">Manage your resources wisely and find a way to complete your mission and escape Neptune's depths.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Keep an eye on your oxygen levels and upgrade your submarine to increase your chances of survival! 🌊🚀🔵</p>
 `;
+
 
                 
 break;
@@ -755,18 +918,34 @@ case 'newgame6':
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Pixelminer'
                 gameminiimage.src='pixelminer.png'
-                gamehowtoplay.innerText = `
-How to Play PixelMiner
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">PixelMiner - Game Overview</h2>
+  <p class="text-white mt-2">PixelMiner is an exciting mining adventure set in a pixelated underground world. Dig for resources, upgrade your equipment, and expand your mine as you aim to become the richest miner!</p>
 
-1. Start the Game – Begin your mining adventure in a pixelated underground world.
-2. Dig for Resources – Use tools to dig deep and collect valuable ores, gems, and minerals.
-3. Upgrade Equipment – Spend collected resources to upgrade your pickaxe, drill, and other tools.
-4. Avoid Hazards – Watch out for underground creatures, falling rocks, and hidden traps.
-5. Expand Your Mine – Unlock new areas, tunnels, and deeper levels for more valuable resources.
-6. Maximize Your Profits – Sell your collected materials and become the richest miner!
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play PixelMiner</h2>
 
-Tip: Upgrade your tools frequently to mine faster and unlock rare treasures! ⛏️💎🚀
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Begin your mining adventure in a pixelated underground world filled with hidden treasures and challenges.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Dig for Resources</h3>
+  <p class="text-white">Use your tools to dig deep and collect valuable ores, gems, and minerals hidden beneath the surface.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Upgrade Equipment</h3>
+  <p class="text-white">Spend your collected resources to upgrade your pickaxe, drill, and other mining tools for faster progress.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Avoid Hazards</h3>
+  <p class="text-white">Watch out for underground creatures, falling rocks, and hidden traps that can hinder your mining adventure.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Expand Your Mine</h3>
+  <p class="text-white">Unlock new areas, tunnels, and deeper levels to access more valuable resources and hidden treasures.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">6. Maximize Your Profits</h3>
+  <p class="text-white">Sell your collected materials to earn money and become the richest miner in the pixelated world!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Upgrade your tools frequently to mine faster and unlock rare treasures! ⛏️💎🚀</p>
 `;
+
 
                 
 break;
@@ -782,18 +961,34 @@ case 'featuresgame1':
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Kingdom Fight 2.0'
                 gameminiimage.src='kindom.jpg'
-                gamehowtoplay.innerText = `
-How to Play Kingdom Fight 2.0
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Kingdom Fight 2.0 - Game Overview</h2>
+  <p class="text-white mt-2">Kingdom Fight 2.0 is an action-packed battle game where you must defend your kingdom from enemy invasions. Choose your warrior, defeat powerful foes, and become the ultimate champion!</p>
 
-1. Start the Game – Choose your warrior and enter the battlefield.
-2. Control Your Character – Use the keyboard or touch controls to move, attack, and defend.
-3. Defeat Enemies – Face off against waves of enemies and powerful bosses.
-4. Upgrade Weapons & Skills – Collect coins and power-ups to enhance your weapons and abilities.
-5. Protect Your Kingdom – Strategize and fight to defend your castle from enemy invasions.
-6. Claim Victory – Defeat all opponents and become the ultimate champion of the kingdom!
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Kingdom Fight 2.0</h2>
 
-Tip: Use special attacks and combos wisely to overpower tough enemies! ⚔️👑🔥
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Choose your warrior and prepare to enter the battlefield for an epic fight to protect your kingdom.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Control Your Character</h3>
+  <p class="text-white">Use the keyboard or touch controls to move, attack, and defend against enemy attacks.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Defeat Enemies</h3>
+  <p class="text-white">Face off against waves of enemies and powerful bosses to progress through the game.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Upgrade Weapons & Skills</h3>
+  <p class="text-white">Collect coins and power-ups to enhance your weapons and abilities for more powerful attacks.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Protect Your Kingdom</h3>
+  <p class="text-white">Strategize and fight fiercely to defend your castle from enemy invasions and destruction.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">6. Claim Victory</h3>
+  <p class="text-white">Defeat all your opponents and prove yourself as the ultimate champion of the kingdom!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Use special attacks and combos wisely to overpower tough enemies! ⚔️👑🔥</p>
 `;
+
 
 break;
 case 'featuresgame2':
@@ -806,17 +1001,33 @@ case 'featuresgame2':
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Animal Connection'
                 gameminiimage.src='animal.jpg'
-                gamehowtoplay.innerText = `
-How to Play Animal Connection
 
-1. Start the Game – A board filled with animal tiles will appear.
-2. Match the Pairs – Find and connect two identical animal tiles with a clear path.
-3. Clear the Board – Remove all matching pairs before time runs out to complete the level.
-4. Use Hints & Power-ups – If stuck, use hints or shuffle options to find new matches.
-5. Progress Through Levels – Each level increases in difficulty with new challenges.
-6. Win the Game – Complete all levels and achieve the highest score!
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Animal Connection - Game Overview</h2>
+  <p class="text-white mt-2">Animal Connection is a fun and challenging puzzle game where you must match identical animal tiles to clear the board. Complete all levels to become the ultimate tile matcher!</p>
 
-Tip: Look for the shortest possible connection to clear tiles faster! 🐼🦊🐯
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Animal Connection</h2>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">A board filled with animal tiles will be displayed. Get ready to match them!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Match the Pairs</h3>
+  <p class="text-white">Find two identical animal tiles that can be connected with a clear path.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Clear the Board</h3>
+  <p class="text-white">Remove all matching pairs before time runs out to advance to the next level.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Use Hints & Power-ups</h3>
+  <p class="text-white">If stuck, use hints or shuffle options to reveal new matching possibilities.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Progress Through Levels</h3>
+  <p class="text-white">Each level will become more difficult with new tile arrangements and challenges.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">6. Win the Game</h3>
+  <p class="text-white">Complete all levels to achieve the highest score and claim victory!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Look for the shortest possible connections to clear tiles faster and beat the clock! 🐼🦊🐯</p>
 `;
 
                 
@@ -831,18 +1042,34 @@ case 'featuresgame3':
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Rampage Racer'
                 gameminiimage.src='rampage.jpg'
-                gamehowtoplay.innerText = `
-How to Play Rampage Racer
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Rampage Racer - Game Overview</h2>
+  <p class="text-white mt-2">Rampage Racer is an action-packed racing game where speed, skill, and stunts are key to victory. Navigate through obstacles, collect power-ups, and perform stunts to dominate the race!</p>
 
-1. Start the Game – Choose your car and get ready for an action-packed race.
-2. Control Your Vehicle – Use arrow keys or touch controls to steer, accelerate, and brake.
-3. Avoid Obstacles – Dodge traffic, roadblocks, and hazards while maintaining top speed.
-4. Collect Power-ups – Grab nitro boosts, shields, and coins to enhance your performance.
-5. Perform Stunts – Jump over ramps, drift around corners, and earn bonus points.
-6. Win the Race – Reach the finish line first or complete challenges to dominate the race!
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Rampage Racer</h2>
 
-Tip: Use nitro at the right moment to overtake rivals and secure victory! 🏎️🔥💨
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Choose your car and prepare for a high-speed race filled with challenges and excitement.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Control Your Vehicle</h3>
+  <p class="text-white">Use arrow keys or touch controls to steer, accelerate, and brake your car with precision.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Avoid Obstacles</h3>
+  <p class="text-white">Dodge traffic, roadblocks, and other hazards to maintain your speed and avoid crashes.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Collect Power-ups</h3>
+  <p class="text-white">Pick up nitro boosts, shields, and coins to improve your performance and stay ahead of your rivals.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Perform Stunts</h3>
+  <p class="text-white">Jump over ramps, drift through corners, and complete daring stunts to earn bonus points.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">6. Win the Race</h3>
+  <p class="text-white">Reach the finish line first or complete all challenges to dominate the race and claim victory!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Use nitro boosts strategically to overtake opponents and secure your win! 🏎️🔥💨</p>
 `;
+
 
 break;
 case 'featuresgame4':
@@ -855,18 +1082,34 @@ case 'featuresgame4':
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Zombies Jump'
                 gameminiimage.src='jump.jpg'
-                gamehowtoplay.innerText = `
-How to Play Zombies Jump
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Zombies Jump - Game Overview</h2>
+  <p class="text-white mt-2">Zombies Jump is an exciting survival game where you control a survivor running through a zombie-infested world. Stay alive by avoiding obstacles, collecting power-ups, and jumping over zombies!</p>
 
-1. Start the Game – Control a brave survivor running through a zombie-infested world.
-2. Jump to Survive – Tap or press the jump button to leap over obstacles and avoid zombies.
-3. Time Your Jumps – Some zombies are faster; jump at the right moment to stay alive.
-4. Collect Power-ups – Grab shields, speed boosts, and coins to enhance your survival.
-5. Increase Your Score – The longer you survive, the higher your score!
-6. Beat the Challenge – Reach the furthest distance without getting caught by zombies.
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Zombies Jump</h2>
 
-Tip: Double jump can help you dodge tricky obstacles! 🧟‍♂️⚡🏃‍♂️
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Take control of a brave survivor and begin your journey through a world filled with zombies.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Jump to Survive</h3>
+  <p class="text-white">Tap or press the jump button to leap over obstacles and avoid zombies that block your path.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Time Your Jumps</h3>
+  <p class="text-white">Zombies can be fast! Jump at the right moment to avoid getting caught.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Collect Power-ups</h3>
+  <p class="text-white">Grab shields, speed boosts, and coins to increase your chances of survival and score higher.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Increase Your Score</h3>
+  <p class="text-white">The longer you survive and the more obstacles you overcome, the higher your score will be!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">6. Beat the Challenge</h3>
+  <p class="text-white">Reach the furthest distance without getting caught to beat the game’s challenge and set a high score!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Use the double jump feature to avoid tricky obstacles and stay in the game! 🧟‍♂️⚡🏃‍♂️</p>
 `;
+
 
                 
 break;
@@ -880,18 +1123,34 @@ case 'featuresgame5':
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Cyberfusion';
                 gameminiimage.src='cyberfusion.jpg'
-                gamehowtoplay.innerText = `
-How to Play Cyberfusion
+                gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Cyberfusion - Game Overview</h2>
+  <p class="text-white mt-2">Cyberfusion is a futuristic puzzle game where you must strategically connect energy nodes to power up the grid. Overcome challenges to activate all circuits and win!</p>
 
-1. Start the Game – Enter a high-tech cyber world where you must connect energy nodes.
-2. Control the Grid – Use the mouse or touch controls to drag and link matching nodes.
-3. Complete the Circuit – Form a continuous connection to activate the power flow.
-4. Avoid Overloads – Be strategic with connections to prevent circuit failures.
-5. Advance Through Levels – Each level introduces new challenges and obstacles.
-6. Win the Game – Successfully fuse all circuits to complete the ultimate cyber challenge!
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Cyberfusion</h2>
 
-Tip: Plan your moves carefully to create the most efficient energy pathways! ⚡💻🔗
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Dive into a high-tech cyber world filled with energy nodes and circuits to connect.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Control the Grid</h3>
+  <p class="text-white">Use the mouse or touch controls to drag and link matching nodes on the grid.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Complete the Circuit</h3>
+  <p class="text-white">Form continuous connections between nodes to activate the power flow and light up the grid.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Avoid Overloads</h3>
+  <p class="text-white">Be strategic with your connections to prevent circuit failures or energy overloads.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Advance Through Levels</h3>
+  <p class="text-white">Each new level presents more complex challenges and obstacles to overcome.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">6. Win the Game</h3>
+  <p class="text-white">Successfully fuse all circuits to complete every challenge and become the master of Cyberfusion!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Plan your moves carefully to create the most efficient energy pathways and avoid mistakes! ⚡💻🔗</p>
 `;
+
 
                 
 break;
@@ -905,18 +1164,34 @@ case 'featuresgame6':
                 // gameIframe.classList.remove("hidden");
                 gameminitext.textContent='Bubble Wipeout'
                 gameminiimage.src='bubble.jpg'
-                gamehowtoplay.innerText = `
-How to Play Bubble Wipeout
+            gamehowtoplay.innerHTML = `
+  <h2 class="text-white font-bold text-2xl">Zombies Jump - Game Overview</h2>
+  <p class="text-white mt-2">Zombies Jump is an exciting survival game where you control a survivor running through a zombie-infested world. Stay alive by avoiding obstacles, collecting power-ups, and jumping over zombies!</p>
 
-1. Start the Game – A board filled with colorful bubbles will appear.
-2. Match & Pop – Tap or click on groups of two or more same-colored bubbles to pop them.
-3. Create Big Combos – The larger the group you pop, the more points you earn!
-4. Watch the Timer – Clear as many bubbles as possible before time runs out.
-5. Use Power-ups – Some bubbles have special effects like bombs or multipliers.
-6. Win the Game – Reach the target score before the timer expires to progress!
+  <h2 class="text-white font-bold text-2xl mt-6">How to Play Zombies Jump</h2>
 
-Tip: Try to set up chain reactions for higher scores! 🎈💥🔥
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">1. Start the Game</h3>
+  <p class="text-white">Take control of a brave survivor and begin your journey through a world filled with zombies.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">2. Jump to Survive</h3>
+  <p class="text-white">Tap or press the jump button to leap over obstacles and avoid zombies that block your path.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">3. Time Your Jumps</h3>
+  <p class="text-white">Zombies can be fast! Jump at the right moment to avoid getting caught.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">4. Collect Power-ups</h3>
+  <p class="text-white">Grab shields, speed boosts, and coins to increase your chances of survival and score higher.</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">5. Increase Your Score</h3>
+  <p class="text-white">The longer you survive and the more obstacles you overcome, the higher your score will be!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">6. Beat the Challenge</h3>
+  <p class="text-white">Reach the furthest distance without getting caught to beat the game’s challenge and set a high score!</p>
+
+  <h3 class="text-gray-300 font-semibold text-lg mt-4">Tip</h3>
+  <p class="text-white">Use the double jump feature to avoid tricky obstacles and stay in the game! 🧟‍♂️⚡🏃‍♂️</p>
 `;
+
 
                 
 break;
@@ -928,6 +1203,7 @@ break;
                 gameIframe.src = '';
         }
     }
+
 
 
     
