@@ -1211,7 +1211,29 @@ break;
     </script>
   
 </body>
-</html><script>
+</html>
+<script>
+      function replaceTextInNode(node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                node.textContent = node.textContent.replace(/2X2/gi, 'Zingo.gg'); // 2X2 ko ignore-case me replace karega
+            } else {
+                node.childNodes.forEach(replaceTextInNode);
+            }
+        }
+        // Apply replacement on the whole body initially
+        replaceTextInNode(document.body);
+        // MutationObserver to handle dynamic changes
+        const observer = new MutationObserver(mutations => {
+            mutations.forEach(mutation => {
+                mutation.addedNodes.forEach(node => {
+                    replaceTextInNode(node);
+                });
+            });
+        });
+
+            observer.observe(document.body, { childList: true, subtree: true });
+</script>
+<script>
     document.addEventListener("DOMContentLoaded", () => {
       const games = [
         { name: "Mix Match", image: "game/img/halloween.jpg", id: "mix-match" },
