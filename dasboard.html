@@ -11,28 +11,54 @@
             background-color: #0F1114;
         }
         #fullscreenButton {
-    z-index: 20;  
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background-color: #4a5568;
-    padding: 10px;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-}
+            z-index: 20;  
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background-color: #4a5568;
+            padding: 10px;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+        }
 
-#fullscreenButton:hover {
-    background-color: #2d3748;
-}
+        #fullscreenButton:hover {
+            background-color: #2d3748;
+        }
 
-#gameIframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; 
-}
+        #gameIframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            border: none;
+            overflow: hidden;
+        }
+
+        #gameContainer {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: #0F1114;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            #gameContainer {
+                margin: 0 !important;
+                aspect-ratio: 4/3;
+            }
+            
+            #gameImage, #gameTitle, #playButton {
+                position: relative;
+                z-index: 2;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -96,7 +122,6 @@
             </button>
         </p>
     </div> -->
-
     <div class="bg-purple-600 text-white text-center py-3 mt-16">
         <p class="flex items-center justify-center gap-2">
             Don't lose your progress! 
@@ -108,15 +133,10 @@
             </button>
         </p>
     </div>
-    
-    
-
-    <!-- Main Content -->
-    <div class="flex flex-col lg:flex-row gap-12 p-4">
-        <!-- Game Section -->
-        <!-- <main class="flex-1">
-            <div class="bg-[#1A1B1E] rounded-lg overflow-hidden">
-                <div id="gameContainer" class="aspect-video bg-[#0F1114] flex flex-col items-center justify-center gap-4 relative">
+    <div class="flex flex-col lg:flex-row gap-2 p-4">
+        <main class="flex-1">
+            <div class="bg-[#1A1B1E] rounded-lg overflow-hidden mx-2 lg:ml-[4.5rem] lg:mr-[1rem]">
+                <div id="gameContainer">
                     <img id="gameImage" src="we.gif" alt="Game Image" class="w-48 h-48 rounded-lg">
                     <h1 id="gameTitle" class="text-white text-3xl font-bold">Mix Match</h1>
                     <button id="playButton" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full flex items-center gap-2">
@@ -130,7 +150,7 @@
                             <path d="M7 14H5v5h5v-2H7v-3zm0-4h3V7h2V5H7v5zm7 9h5v-5h-2v3h-3v2zm3-9V7h-3V5h5v5h-2z"/>
                         </svg>
                     </button>
-                    <iframe id="gameIframe" src="" class="absolute inset-0 w-full h-full hidden"></iframe>
+                    <iframe id="gameIframe" src="" class="hidden"></iframe>
                 </div>
                 <div class="flex items-center gap-4 p-4 border-t border-gray-800">
                     <div class="flex items-center gap-2">
@@ -159,68 +179,67 @@
                 </div>
             </div>
         </main>
-         -->
-        <!-- <script>
 
-            document.getElementById("fullscreenButton").addEventListener("click", function () {
-                let gameContainer = document.getElementById("gameContainer");
-                if (!document.fullscreenElement) {
-                    gameContainer.requestFullscreen().catch(err => {
-                        console.log(`Error attempting to enable full-screen mode: ${err.message}`);
-                    });
-                } else {
-                    document.exitFullscreen();
-                } 
-            });
-        </script> -->
-        <main class="flex-1">
-    <div class="bg-[#1A1B1E] rounded-lg overflow-hidden  ">
-        <div id="gameContainer" class="aspect-video bg-[#0F1114] flex flex-col items-center justify-center gap-4 relative">
-            <img id="gameImage" src="we.gif" alt="Game Image" class="w-48 h-48 rounded-lg">
-            <h1 id="gameTitle" class="text-white text-3xl font-bold">Mix Match</h1>
-            <button id="playButton" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full flex items-center gap-2">
-                Play Now
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                </svg>
-            </button>
-            <button id="fullscreenButton" class="absolute top-4 right-4 bg-gray-700 hover:bg-gray-800 text-white p-2 rounded-lg">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M7 14H5v5h5v-2H7v-3zm0-4h3V7h2V5H7v5zm7 9h5v-5h-2v3h-3v2zm3-9V7h-3V5h5v5h-2z"/>
-                </svg>
-            </button>
-            <iframe id="gameIframe" src="" class="absolute inset-0 w-full h-full hidden"></iframe>
-        </div>
-        <div class="flex items-center gap-4 p-4 border-t border-gray-800">
-            <div class="flex items-center gap-2">
-                <img src="/garden.png" alt="Game icon" id="gameminiimage" class="w-8 h-8 rounded-full">
-                <span id="gameminitext" class="text-white font-medium"></span>
+        <!-- Right Sidebar -->
+        <aside class="w-full lg:w-80">
+            <div class="bg-[#4A148C] rounded-lg p-6 text-white mb-6 shadow-lg">
+                <h2 class="text-2xl font-bold mb-2">
+                    Play <span class="text-yellow-400">on mobile</span>,
+                    <br>no installs needed
+                </h2>
+                <img src="Zingo_Logo.png" alt="Mobile gaming" class="w-24 h-24 ml-auto drop-shadow-lg">
             </div>
-            <div class="flex items-center gap-6 ml-auto">
-                <button class="flex items-center gap-1 text-gray-400 hover:text-white">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
-                    </svg>
-                    <span>1.3K</span>
-                </button>
-                <button class="flex items-center gap-1 text-gray-400 hover:text-white">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2z"/>
-                    </svg>
-                    <span>140</span>
-                </button>
-                <button class="text-gray-400 hover:text-white">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                    </svg>
-                </button>
+            
+            <!-- Similar Games -->
+            <div class="grid gap-4">
+                <div class="w-full h-60 bg-gradient-to-br from-gray-700 to-gray-600 border border-gray-500 flex items-center justify-center relative rounded-lg shadow-md">
+                    <span class="absolute bottom-2 text-xs uppercase tracking-widest text-gray-300">Advertisement</span>
+                </div>
+                <h3 class="text-white font-bold text-center">Top Games</h3>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="dasboard.html" class="game-card" data-game-id="featuresgame2">
+                        <div class="relative">
+                            <img src="animal.jpg" alt="Animal Connection" class="w-full h-28 object-cover rounded-lg">
+                            <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">UPDATED</span>
+                            <h3 class="text-white mt-1 text-sm">Animal Connection</h3>
+                        </div>
+                    </a>
+                
+                    <a href="dasboard.html" class="game-card" data-game-id="featuresgame3">
+                        <div class="relative">
+                            <img src="rampage.jpg" alt="Rampage Racer" class="w-full h-28 object-cover rounded-lg">
+                            <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">UPDATED</span>
+                            <h3 class="text-white mt-1 text-sm">Rampage Racer</h3>
+                        </div>
+                    </a>
+                
+                    <a href="dasboard.html" class="game-card" data-game-id="featuresgame5">
+                        <div class="relative">
+                            <img src="cyberfusion.jpg" alt="Cyberfusion" class="w-full h-28 object-cover rounded-lg">
+                            <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">UPDATED</span>
+                            <h3 class="text-white mt-1 text-sm">Cyberfusion</h3>
+                        </div>
+                    </a>
+                
+                    <a href="dasboard.html" class="game-card" data-game-id="featuresgame6">
+                        <div class="relative">
+                            <img src="bubble.jpg" alt="Bubble Wipeout" class="w-full h-28 object-cover rounded-lg">
+                            <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">UPDATED</span>
+                            <h3 class="text-white mt-1 text-sm">Bubble Wipeout</h3>
+                        </div>
+                    </a>
+                </div>
+                
             </div>
-        </div>
+        </aside>
     </div>
-</main>
-        <!-- <script>
 
-// landsacpe krdega auto
+    <script>
+        document.getElementById("playButton").addEventListener("click", function () {
+            const gameIframe = document.getElementById("gameIframe");
+            gameIframe.classList.remove("hidden");  
+        });
 
         document.getElementById("fullscreenButton").addEventListener("click", function () {
             let gameContainer = document.getElementById("gameContainer");
@@ -235,80 +254,7 @@
                 document.exitFullscreen();
             }
         });
-    </script> -->
-        
-<script>
-document.getElementById("playButton").addEventListener("click", function () {
-const gameIframe = document.getElementById("gameIframe");
-gameIframe.classList.remove("hidden");  
-});
-
-document.getElementById("fullscreenButton").addEventListener("click", function () {
-let gameContainer = document.getElementById("gameContainer");
-
-if (!document.fullscreenElement) {
-gameContainer.requestFullscreen().then(() => {
-    if (screen.orientation && screen.orientation.lock) {
-        screen.orientation.lock("landscape").catch(err => console.log(err));
-    }
-}).catch(err => console.log(`Error attempting to enable full-screen mode: ${err.message}`));
-} else {
-document.exitFullscreen();
-}
-});
-</script>
-        <!-- Right Sidebar -->
-        <aside class="w-full lg:w-80">
-            <!-- Mobile Banner -->
-            <!-- <div class="bg-purple-700 rounded-lg p-6 text-white mb-6">
-                <h2 class="text-2xl font-bold mb-2">
-                    Play <span class="text-pink-400">on mobile</span>,
-                    <br>no installs needed
-                </h2>
-                <img src="Zingo_Logo.png" alt="Mobile gaming" class="w-24 h-24 ml-auto">
-            </div> -->
-            <div class="bg-[#4A148C] rounded-lg p-6 text-white mb-6 shadow-lg">
-                <h2 class="text-2xl font-bold mb-2">
-                    Play <span class="text-yellow-400">on mobile</span>,
-                    <br>no installs needed
-                </h2>
-                <img src="Zingo_Logo.png" alt="Mobile gaming" class="w-24 h-24 ml-auto drop-shadow-lg">
-            </div>
-            
-
-            <!-- Similar Games -->
-             
-            <div class="grid gap-4">
-                <a href="dasboard.html" class="game-card" data-game-id="featuresgame1">
-
-                <div class="relative">
-                    <img src="kindom.jpg" alt="Bloxd.io" class="w-full h-32 object-cover rounded-lg">
-                    <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">UPDATED</span>
-                    <h3 class="text-white mt-2">Kindom Fight 2</h3>
-                </div>
-                </a>
-
-                <!-- Add more similar game cards -->
-                <a href="dasboard.html" class="game-card" data-game-id="featuresgame2">
-
-                <div class="relative">
-                    <img src="animal.jpg" alt="Bloxd.io" class="w-full h-32 object-cover rounded-lg">
-                    <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">UPDATED</span>
-                    <h3 class="text-white mt-2">Animal Connection</h3>
-                </div>
-                </a>
-
-                <a href="dasboard.html" class="game-card" data-game-id="featuresgame3">
-
-                    <div class="relative">
-                        <img src="rampage.jpg" alt="Bloxd.io" class="w-full h-32 object-cover rounded-lg">
-                        <span class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">UPDATED</span>
-                        <h3 class="text-white mt-2">Rampage Racer</h3>
-                    </div>
-                    </a>
-                
-         </aside>
-    </div>
+    </script>
 <!-- Game Description Section -->
 <!-- <div class="text-gray-400 text-center mt-4">
     <p id="" >This is a fun and engaging game where you can mix and match different elements to create unique combinations. Enjoy the challenge and have fun!</p>
