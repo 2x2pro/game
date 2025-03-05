@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+    <!-- <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0F1114;
@@ -47,11 +47,12 @@
             gap: 1rem;
             overflow: hidden;
         }
-
+    
         @media (max-width: 768px) {
             #gameContainer {
                 margin: 0 !important;
                 aspect-ratio: 4/3;
+ 
             }
             
             #gameImage, #gameTitle, #playButton {
@@ -59,7 +60,81 @@
                 z-index: 2;
             }
         }
-    </style>
+    </style> -->
+    <style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #0F1114;
+    }
+    #fullscreenButton {
+        z-index: 20;  
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background-color: #4a5568;
+        padding: 10px;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+    }
+
+    #fullscreenButton:hover {
+        background-color: #2d3748;
+    }
+
+    #gameIframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        border: none;
+        overflow: hidden;
+    }
+
+    #gameContainer {
+        position: relative;
+        aspect-ratio: 16/9;
+        background: #0F1114;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        overflow: hidden;
+    }
+    
+    /* Fix for mobile view */
+    @media (max-width: 768px) {
+        #gameContainer {
+            margin: 0 !important;
+            aspect-ratio: 4/3;
+            
+        }
+        
+        #gameImage {
+            max-height: 120px;
+            width: auto;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 10px;
+        }
+        
+        #gameTitle {
+            font-size: 1.5rem;
+             position: relative;
+            z-index: 2;
+        }
+        
+        #playButton {
+            position: relative;
+            z-index: 2;
+            margin-top: 5px; /* Gap kam kiya hai */
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+    }
+</style>
 </head>
 <body class="min-h-screen">
     <!-- Header -->
@@ -133,7 +208,7 @@
             </button>
         </p>
     </div>
-    <div class="flex flex-col lg:flex-row gap-2 p-4">
+    <div class="flex flex-col lg:flex-row gap-2 p-4 ">
         <main class="flex-1">
             <div class="bg-[#1A1B1E] rounded-lg overflow-hidden mx-2 lg:ml-[4.5rem] lg:mr-[1rem]">
                 <div id="gameContainer">
@@ -152,7 +227,7 @@
                     </button>
                     <iframe id="gameIframe" src="" class="hidden"></iframe>
                 </div>
-                <div class="flex items-center gap-4 p-4 border-t border-gray-800">
+                <div class="flex items-center gap-4 p-4 border-t border-gray-800 ">
                     <div class="flex items-center gap-2">
                         <img src="/garden.png" alt="Game icon" id="gameminiimage" class="w-8 h-8 rounded-full">
                         <span id="gameminitext" class="text-white font-medium"></span>
