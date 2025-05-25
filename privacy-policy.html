@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Zingo.gg</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Condensed:wght@700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="game-controller-logo.png" type="image/png">
+    <style>
+        body {
+            background: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .privacy-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid #e995b6;
+            background: linear-gradient(135deg, #fff 0%, #fdf2f7 100%);
+            border-radius: 10px;
+            padding: 2rem;
+        }
+
+        .privacy-header h1 {
+            color: #333;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .privacy-header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+
+        .privacy-content {
+            line-height: 1.8;
+            padding: 0 1rem;
+        }
+
+        .privacy-content h2 {
+            color: #e995b6;
+            margin: 2.5rem 0 1.5rem;
+            font-size: 2rem;
+            font-weight: 600;
+            position: relative;
+            padding-left: 1rem;
+            border-left: 4px solid #e995b6;
+        }
+
+        .privacy-content h3 {
+            color: #333;
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .privacy-content p,
+        .privacy-content ul {
+            color: #444;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .privacy-content ul {
+            padding-left: 2rem;
+            list-style-type: none;
+        }
+
+        .privacy-content li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .privacy-content li:before {
+            content: "•";
+            color: #e995b6;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .privacy-content a {
+            color: #e995b6;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .privacy-content a:hover {
+            color: #c6534b;
+            text-decoration: underline;
+        }
+
+        .last-updated {
+            font-style: italic;
+            color: #666;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            border-top: 1px solid #eee;
+            background: #fafafa;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .privacy-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            .privacy-header {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .privacy-header h1 {
+                font-size: 2rem;
+            }
+
+            .privacy-header p {
+                font-size: 1rem;
+            }
+
+            .privacy-content {
+                padding: 0;
+            }
+
+            .privacy-content h2 {
+                font-size: 1.6rem;
+                margin: 2rem 0 1rem;
+            }
+
+            .privacy-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .privacy-content p,
+            .privacy-content ul {
+                font-size: 1rem;
+            }
+
+            .privacy-content ul {
+                padding-left: 1rem;
+            }
+
+            .privacy-content li {
+                padding-left: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .privacy-container {
+                margin: 0.5rem;
+                padding: 0.8rem;
+            }
+
+            .privacy-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .privacy-content h2 {
+                font-size: 1.4rem;
+            }
+
+            .privacy-content h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Navigation Styles */
+        nav {
+            background: #fff;
+            /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #e995b6;
+            background: #fdf2f7;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.open {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <div class=".logo-img">
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="250" height="70" viewBox="0 0 360 100">
+                        <!-- Game Controller Icon -->
+                        <g>
+                            <ellipse cx="50" cy="50" rx="32" ry="32" fill="url(#grad1)" />
+                            <rect x="31" y="40" width="38" height="18" rx="9" fill="#fbf4f4" stroke="#e995b6"
+                                stroke-width="2" />
+                            <circle cx="42" cy="49" r="3" fill="#c6534b" />
+                            <circle cx="58" cy="49" r="3" fill="#e8b832" />
+                            <circle cx="43.5" cy="58.5" r="2.5" fill="#44bad7" />
+                            <circle cx="56.5" cy="58.5" r="2.5" fill="#f0e097" />
+                        </g>
+                        <text x="85" y="62" font-family="'Open Sans', Arial, sans-serif" font-weight="bold"
+                            font-size="38" fill="url(#grad2)" letter-spacing="2">
+                            zingo.gg
+                        </text>
+                        <defs>
+                            <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#e995b6" />
+                                <stop offset="100%" stop-color="#c6534b" />
+                            </linearGradient>
+                            <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#e995b6" />
+                                <stop offset="100%" stop-color="#c6534b" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+
+            <nav>
+                <div class="mobile-menu-toggle">&#9776;</div>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="privacy-container">
+            <div class="privacy-header">
+                <h1>Privacy Policy</h1>
+                <p>Effective Date: 01-05-2025</p>
+                <p>Last Updated: 23-05-2025</p>
+            </div>
+
+            <div class="privacy-content">
+                <p>Welcome to Zingo.gg, operated by 2x2Pro ("we", "us", "our"). Your privacy is important to us. This
+                    Privacy Policy explains how we collect, use, disclose, and protect your information when you visit
+                    and interact with our website https://zingo.gg.</p>
+
+                <h2>1. Information We Collect</h2>
+                <p>We collect minimal information to ensure a seamless, secure, and user-friendly experience.</p>
+
+                <h3>a. Automatically Collected Information</h3>
+                <p>When you use Zingo.gg, we may collect:</p>
+                <ul>
+                    <li>IP address</li>
+                    <li>Browser type and version</li>
+                    <li>Device type and operating system</li>
+                    <li>Date and time of access</li>
+                    <li>Pages visited and time spent</li>
+                    <li>Referring/exit pages</li>
+                </ul>
+
+                <h3>b. Cookies and Tracking Technologies</h3>
+                <p>We use cookies to:</p>
+                <ul>
+                    <li>Remember your preferences</li>
+                    <li>Monitor performance</li>
+                    <li>Improve content and game loading</li>
+                    <li>Track usage for analytics (e.g., via Google Analytics)</li>
+                </ul>
+                <p>You can control or disable cookies through your browser settings.</p>
+
+                <h2>2. How We Use Your Information</h2>
+                <p>We use the collected data to:</p>
+                <ul>
+                    <li>Operate and maintain the website</li>
+                    <li>Analyze trends and improve performance</li>
+                    <li>Provide a personalized gaming experience</li>
+                    <li>Detect and prevent fraudulent or malicious activity</li>
+                    <li>Ensure site security and performance</li>
+                </ul>
+
+                <h2>3. Data Sharing and Disclosure</h2>
+                <p>We do not sell or rent your data to third parties. However, we may share data with:</p>
+                <ul>
+                    <li>Web hosting providers (e.g., Hostinger) for operational purposes</li>
+                    <li>Analytics services (e.g., Google Analytics) to track site usage</li>
+                    <li>Legal authorities if required by law, subpoena, or to enforce our policies</li>
+                </ul>
+
+                <h2>4. Third-Party Services and Links</h2>
+                <p>Zingo.gg may contain links to third-party websites or services. We are not responsible for their
+                    privacy practices. Please review their privacy policies separately.</p>
+
+                <h2>5. Children's Privacy</h2>
+                <p>Zingo.gg is not directed at children under the age of 13 (or 16 in some jurisdictions). We do not
+                    knowingly collect personal information from children.</p>
+
+                <h2>6. Data Security</h2>
+                <p>We use SSL encryption and other technical measures to secure your data during transmission. However,
+                    no online platform is 100% secure.</p>
+
+                <h2>7. Your Choices and Rights</h2>
+                <p>Depending on your jurisdiction, you may have the right to:</p>
+                <ul>
+                    <li>Access or correct your personal information</li>
+                    <li>Request data deletion</li>
+                    <li>Opt-out of cookies or tracking</li>
+                </ul>
+                <p>To exercise any of these rights, contact us at: support@zingo.gg</p>
+
+                <h2>8. Updates to This Policy</h2>
+                <p>We may update this Privacy Policy as needed. Any significant changes will be posted on this page with
+                    an updated effective date.</p>
+
+                <h2>9. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy or how we handle your data, please contact:</p>
+                <p>
+                    2x2Pro – Zingo.gg Team<br>
+                    Email: <a href="mailto:support@zingo.gg">support@zingo.gg</a><br>
+                    Website: <a href="https://zingo.gg">https://zingo.gg</a>
+                </p>
+
+                <p class="last-updated">Last Updated: May 23, 2025</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logo">
+                <div class=".logo-img">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="250" height="70" viewBox="0 0 360 100">
+                        <!-- Game Controller Icon -->
+                        <g>
+                            <ellipse cx="50" cy="50" rx="32" ry="32" fill="url(#grad1)" />
+                            <rect x="31" y="40" width="38" height="18" rx="9" fill="#fbf4f4" stroke="#e995b6"
+                                stroke-width="2" />
+                            <circle cx="42" cy="49" r="3" fill="#c6534b" />
+                            <circle cx="58" cy="49" r="3" fill="#e8b832" />
+                            <circle cx="43.5" cy="58.5" r="2.5" fill="#44bad7" />
+                            <circle cx="56.5" cy="58.5" r="2.5" fill="#f0e097" />
+                        </g>
+                        <text x="85" y="62" font-family="'Open Sans', Arial, sans-serif" font-weight="bold"
+                            font-size="38" fill="url(#grad2)" letter-spacing="2">
+                            zingo.gg
+                        </text>
+                        <defs>
+                            <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#e995b6" />
+                                <stop offset="100%" stop-color="#c6534b" />
+                            </linearGradient>
+                            <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#e995b6" />
+                                <stop offset="100%" stop-color="#c6534b" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+            <p class="footer-description">
+                Welcome to our online gaming hub, where the excitement never stops! Dive into a world of endless fun
+                with over 1000 free online games ready for you to play. Whether you're a casual gamer or a dedicated
+                enthusiast, our diverse collection offers a thrilling array of choices. Join us and explore the joy of
+                gaming without any cost - it's all about play, enjoyment, and a community that shares the passion for
+                online gaming!
+            </p>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-category">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Adventure</a></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Strategy</a></li>
+                    <li><a href="#">Puzzle & Logic</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Other Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow On</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61574228525832" class="social-icon"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/@socialmaster-o4j" class="social-icon"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <h3>Support</h3>
+                <p>Contact Us : support@zingo.gg</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
+    </script>
+</body>
+
+</html>

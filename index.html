@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KN1ZJQ0EE2"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1824384824585623"
+        crossorigin="anonymous"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-KN1ZJQ0EE2');
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Condensed:wght@700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="icon" href="game-controller-logo.png" type="image/png">
+    <style>
+        /* Search functionality styling */
+        .search-suggestion-img {
+            width: 32px;
+            height: 32px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+
+        #search-results a {
+            display: flex;
+            align-items: center;
+            padding: 8px 14px;
+            text-decoration: none;
+            color: #333;
+            border-radius: 6px;
+            transition: background 0.2s;
+            font-size: 1rem;
+        }
+
+        #search-results a:hover {
+            background: #f7e6ef;
+        }
+
+        #search-results {
+            z-index: 1000;
+            max-height: 200px;
+            overflow-y: auto;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+            border-radius: 10px;
+            margin-top: 8px;
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        /* Navigation styling */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            padding: 0.5rem;
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #e76a9b;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 35vw;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #fff;
+                position: absolute;
+                top: 100%;
+                right: 0.0001rem;
+                left: auto;
+                width: 30vw;
+                padding: 1rem;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                box-sizing: border-box;
+                border-radius: 0.5rem;
+                overflow-x: hidden;
+            }
+
+            nav ul.open {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Add these mobile-specific styles */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 1rem;
+                min-height: auto;
+            }
+
+            .hero-content {
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .search-container {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .search-box {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .search-box input {
+                width: 100%;
+                padding: 12px;
+                font-size: 1rem;
+            }
+
+            .games-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                padding: 10px;
+                overflow-x: hidden;
+            }
+
+            .gamecard {
+                width: 100%;
+                margin: 0;
+            }
+
+            .gamecard img {
+                width: 100%;
+                height: 120px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            .gamecard h3 {
+                font-size: 0.9rem;
+                margin: 5px 0;
+                padding: 0 5px;
+            }
+
+            .game-category {
+                font-size: 0.8rem;
+                padding: 3px 8px;
+            }
+
+            .slider-arrow {
+                display: none;
+            }
+
+            .slider-dots {
+                display: none;
+            }
+
+            .social-sidebar {
+                display: none;
+            }
+
+            .most-played h2 {
+                font-size: 1.5rem;
+                padding: 1rem;
+                margin: 0;
+            }
+
+            .categories {
+                padding: 1rem;
+            }
+
+            .category-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .category-card {
+                padding: 10px;
+            }
+
+            .category-card h3 {
+                font-size: 0.9rem;
+            }
+
+            .category-icon {
+                font-size: 1.5rem;
+                margin-bottom: 5px;
+            }
+
+            /* Mobile Navigation */
+            nav {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: #fff;
+                z-index: 1000;
+                padding: 10px;
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul {
+                display: flex;
+                justify-content: space-around;
+                padding: 0;
+                margin: 0;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            nav ul li a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 0.8rem;
+                padding: 5px;
+            }
+
+            nav ul li a i {
+                font-size: 1.2rem;
+                margin-bottom: 3px;
+            }
+
+            .mobile-menu-toggle {
+                display: none;
+            }
+
+            /* Footer Mobile Styles */
+            footer {
+                padding: 1rem;
+                margin-bottom: 60px;
+                /* Space for fixed navigation */
+            }
+
+            .footer-top {
+                padding: 1rem 0;
+            }
+
+            .footer-logo {
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+
+            .footer-description {
+                font-size: 0.9rem;
+                text-align: center;
+                padding: 0 1rem;
+            }
+
+            .footer-bottom {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 1rem 0;
+            }
+
+            .footer-category,
+            .footer-links,
+            .footer-social {
+                text-align: center;
+            }
+
+            .footer-category h3,
+            .footer-links h3,
+            .footer-social h3 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .footer-category ul,
+            .footer-links ul {
+                padding: 0;
+            }
+
+            .footer-category li,
+            .footer-links li {
+                margin: 0.3rem 0;
+            }
+
+            .footer-category a,
+            .footer-links a {
+                font-size: 0.9rem;
+            }
+
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .social-icon {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Additional styles for very small screens */
+        @media (max-width: 480px) {
+            .games-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .gamecard img {
+                height: 100px;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+
+            .footer-bottom {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <div class=".logo-img">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="250" height="70" viewBox="0 0 360 100">
+                        <!-- Game Controller Icon -->
+                        <g>
+                            <ellipse cx="50" cy="50" rx="32" ry="32" fill="url(#grad1)" />
+                            <rect x="31" y="40" width="38" height="18" rx="9" fill="#fbf4f4" stroke="#e995b6"
+                                stroke-width="2" />
+                            <circle cx="42" cy="49" r="3" fill="#c6534b" />
+                            <circle cx="58" cy="49" r="3" fill="#e8b832" />
+                            <circle cx="43.5" cy="58.5" r="2.5" fill="#44bad7" />
+                            <circle cx="56.5" cy="58.5" r="2.5" fill="#f0e097" />
+                        </g>
+                        <text x="85" y="62" font-family="'Open Sans', Arial, sans-serif" font-weight="bold"
+                            font-size="38" fill="url(#grad2)" letter-spacing="2">
+                            zingo.gg
+                        </text>
+                        <defs>
+                            <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#e995b6" />
+                                <stop offset="100%" stop-color="#c6534b" />
+                            </linearGradient>
+                            <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#e995b6" />
+                                <stop offset="100%" stop-color="#c6534b" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+
+            <nav>
+                <div class="mobile-menu-toggle">&#9776;</div>
+                <ul class="menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <script>
+                const toggle = document.querySelector('.mobile-menu-toggle');
+                const menu = document.querySelector('.menu');
+
+                toggle.addEventListener('click', () => {
+                    menu.classList.toggle('open');
+                });
+            </script>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content" id="home">
+                <h1>PLAY ONLINE GAMES !</h1>
+                <h2>A Small Small Games That Makes Your Day Enjoyable !</h2>
+
+                <div class="search-container">
+                    <h3>Search Game</h3>
+                    <div class="search-box">
+                        <input id="search-bar" type="text" placeholder="Search here...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div id="search-results" class="hidden">
+                        <!-- Search results will be appended here -->
+                    </div>
+                </div>
+            </div>
+            <div class="social-sidebar">
+                <a href="https://www.facebook.com/profile.php?id=61574228525832" class="social-icon facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <!-- <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a> -->
+                <!-- <a href="#" class="social-icon reddit"><i class="fas fa-reddit-alien"></i></a> -->
+                <a href="https://www.instagram.com/zingo.gg/" class="social-icon instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@Zingogg" class="social-icon youtube"><i
+                        class="fab fa-youtube"></i></a>
+
+
+                <a href="#" class="social-icon hide-button"><i class="fas fa-chevron-left"></i></a>
+            </div>
+        </section>
+
+        <section class="most-played">
+            <h2 id="most">Most Played Games</h2>
+            <div class="games-slider">
+                <button class="slider-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+                <div class="games-container">
+
+                    <div class="gamecard">
+                        <a href="game.html" class="game-card" data-game-id='temple'>
+
+                            <img src="https://i.pinimg.com/736x/07/ef/10/07ef10c982b089babd27eb19228264e5.jpg"
+                                alt="temple-run-2">
+                            <div class="game-category">Adventure </div>
+                            <h3>Play Temple run 2 </h3>
+                        </a>
+
+                    </div>
+
+
+                    <div class="gamecard">
+                        <a href="game.html" class="game-card" data-game-id='guess'>
+
+                            <img src="games/random number/guess.jpeg" alt="temple-run-2">
+                            <div class="game-category">Puzzle</div>
+                            <h3>Play Guess the Number </h3>
+                        </a>
+
+                    </div>
+                    <div class="gamecard">
+                        <a href="game.html" class="game-card" data-game-id='subway'>
+
+                            <img src="https://downloadr2.apkmirror.com/wp-content/uploads/2018/11/5bffa628baff0.png"
+                                alt="temple-run-2">
+                            <div class="game-category">Strategy</div>
+                            <h3>Play Subway Suffer</h3>
+                        </a>
+
+                    </div>
+                    <div class="gamecard">
+                        <a href="game.html" class="game-card" data-game-id='archer'>
+
+                            <img src="https://play-lh.googleusercontent.com/Xgr4WCjbAKPEVUjtNOoPQpCvkW8US3Lk4pgg1gN7pRapscQ_8Xrc6-uakEYQPd6gQZ_6"
+                                alt="temple-run-2">
+                            <div class="game-category">Action</div>
+                            <h3>Play Archer Hero</h3>
+                        </a>
+
+
+                    </div>
+                    <div class="gamecard">
+                        <a href="game.html" class="game-card" data-game-id='love'>
+
+                            <img src="lovebubbles200.webp" width="620px" alt="temple-run-2">
+                            <div class="game-category">strategy</div>
+                            <h3>Play Love Bubble</h3>
+                        </a>
+
+                    </div>
+                    <div class="gamecard">
+                        <a href="game.html" class="game-card" data-game-id='angrybird'>
+
+                            <img src="images.jpeg" width="620px" alt="temple-run-2">
+                            <div class="game-category">Adeventure</div>
+                            <h3>Angry Bird</h3>
+                        </a>
+
+                    </div>
+                    <div class="gamecard">
+                        <a href="game.html" class="game-card" data-game-id='amongus'>
+
+                            <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Among_Us_cover_art.jpg"
+                                alt="temple-run-2">
+                            <div class="game-category">Adeventure</div>
+                            <h3>Among Us</h3>
+                        </a>
+
+                    </div>
+                    <div class="gamecard">
+                        <a href="game.html" class="game-card" data-game-id='candycrush'>
+
+                            <img src="Candy.png" width="600px" alt="temple-run-2">
+                            <div class="game-category">puzzle</div>
+                            <h3>Candy Crush</h3>
+                        </a>
+
+                    </div>
+
+
+                    <div class="gamecard">
+                        <a href="game.html" class="game-card" data-game-id='traffic-jam-3d'>
+
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf-PDRFohPHOd3aE9BsrtOkrSFi_ygCqbR3g&s"
+                                width="600px" alt="traffic-jam-3d">
+                            <div class="game-category">Action</div>
+                            <h3>play traffic-jam-3d</h3>
+                        </a>
+
+                    </div>
+                    <div class="gamecard" data-name="traffic jam 3d racing">
+                        <a href="game.html" class="game-card" data-game-id='indian-uphill-bus-simulator-3d'>
+
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzGvuRh78dpMbh-mZ6HGdCZCI74ZoQqjsBCg&s">
+                            <div class="game-category">Action</div>
+                            <h3>play traffic-jam-3d</h3>
+                        </a>
+
+                    </div>
+
+                    <div class="gamecard" data-name="traffic jam 3d racing">
+                        <a href="game.html" class="game-card" data-game-id="bicycle-stunts-3d">
+                            <img src="https://play-lh.googleusercontent.com/UOPYEbybhENEOtch88M7Vw4FxAY8syWAR9q-Fn57zIPj_0ik4pFybPqKR9mOxsKynE54=w526-h296-rw"
+                                alt="Bicycle Stunts 3D">
+                            <div class="game-category">Sports</div>
+                            <h3>Play Bicycle Stunts 3D</h3>
+                        </a>
+                    </div>
+
+                    <div class="gamecard" data-name="traffic jam 3d racing">
+                        <a href="game.html" class="game-card" data-game-id="furious-racing-3d">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0hbCvJQL8RHYCOCPR0WswWRnaBfSyPggldA&s"
+                                alt="Furious Racing 3D">
+                            <div class="game-category">Racing</div>
+                            <h3>Play Furious Racing 3D</h3>
+                        </a>
+                    </div>
+
+                    <div class="gamecard" data-name="traffic jam 3d racing">
+                        <a href="game.html" class="game-card" data-game-id="kart-race-3d">
+                            <img src="https://static.keygames.com/0/114640/100387/1024x1024/kart-race-3d.webp"
+                                alt="Kart Race 3D">
+                            <div class="game-category">Racing</div>
+                            <h3>Play Kart Race 3D</h3>
+                        </a>
+                    </div>
+
+                    <div class="gamecard" data-name="NeedForSpeed">
+                        <a href="game.html" class="game-card" data-game-id="NeedForSpeed">
+                            <img src="needforspeed.avif" alt="need for speed ">
+                            <div class="game-category">Racing</div>
+                            <h3>Play Need for Speed </h3>
+                        </a>
+                    </div>
+
+                    <div class="gamecard">
+                        <a href="game.html" class="game-card" data-game-id='mix-match'>
+
+                            <img src="games/mix&match/img/halloween.jpg" alt="temple-run-2">
+                            <div class="game-category">Strategy</div>
+                            <h3>Play Mix & Match </h3>
+                        </a>
+
+                    </div>
+
+                </div>
+                <button class="slider-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+        <section class="categories">
+            <h2 id="browse">Browse Categories</h2>
+            <div class="category-grid">
+                <a href="#" class="category-card" data-category="all">
+                    <div class="category-icon"><i class="fas fa-th-list"></i></div>
+                    <h3>All Games</h3>
+                </a>
+                <a href="#" class="category-card" data-category="action">
+                    <div class="category-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3>Action</h3>
+                </a>
+                <a href="#" class="category-card" data-category="adventure">
+                    <div class="category-icon"><i class="fas fa-mountain"></i></div>
+                    <h3>Adventure</h3>
+                </a>
+                <a href="#" class="category-card" data-category="puzzle">
+                    <div class="category-icon"><i class="fas fa-puzzle-piece"></i></div>
+                    <h3>Puzzle</h3>
+                </a>
+                <a href="#" class="category-card" data-category="strategy">
+                    <div class="category-icon"><i class="fas fa-chess"></i></div>
+                    <h3>Strategy</h3>
+                </a>
+                <a href="#" class="category-card" data-category="sports">
+                    <div class="category-icon"><i class="fas fa-running"></i></div>
+                    <h3>Sports</h3>
+                </a>
+                <a href="#" class="category-card" data-category="racing">
+                    <div class="category-icon"><i class="fas fa-car"></i></div>
+                    <h3>Racing</h3>
+                </a>
+            </div>
+        </section>
+
+
+        <div class="games-slider">
+            <button class="slider-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+            <div class="games-container">
+
+                <section class="games-container">
+
+                    <div class="games-slider">
+                        <button class="slider-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+                        <div class="games-container">
+                            <!-- Adventure Games -->
+                            <div class="gamecard" data-category="adventure">
+                                <a href="game.html" class="game-card" data-game-id='temple'>
+                                    <img src="https://i.pinimg.com/736x/07/ef/10/07ef10c982b089babd27eb19228264e5.jpg"
+                                        alt="temple-run-2">
+                                    <div class="game-category">Adventure</div>
+                                    <h3>Play Temple run 2</h3>
+                                </a>
+                            </div>
+
+                            <div class="gamecard" data-category="adventure">
+                                <a href="game.html" class="game-card" data-game-id='angrybird'>
+                                    <img src="images.jpeg" width="620px" alt="Angry Bird">
+                                    <div class="game-category">Adventure</div>
+                                    <h3>Angry Bird</h3>
+                                </a>
+                            </div>
+
+                            <div class="gamecard" data-category="adventure">
+                                <a href="game.html" class="game-card" data-game-id='amongus'>
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Among_Us_cover_art.jpg"
+                                        alt="Among Us">
+                                    <div class="game-category">Adventure</div>
+                                    <h3>Among Us</h3>
+                                </a>
+                            </div>
+
+                            <!-- Puzzle Games -->
+                            <div class="gamecard" data-category="puzzle">
+                                <a href="game.html" class="game-card" data-game-id='guess'>
+                                    <img src="games/random number/guess.jpeg" alt="Guess the Number">
+                                    <div class="game-category">Puzzle</div>
+                                    <h3>Play Guess the Number</h3>
+                                </a>
+                            </div>
+
+                            <div class="gamecard" data-category="puzzle">
+                                <a href="game.html" class="game-card" data-game-id='candycrush'>
+                                    <img src="Candy.png" width="600px" alt="Candy Crush">
+                                    <div class="game-category">Puzzle</div>
+                                    <h3>Candy Crush</h3>
+                                </a>
+                            </div>
+
+                            <!-- Strategy Games -->
+                            <div class="gamecard" data-category="strategy">
+                                <a href="game.html" class="game-card" data-game-id='subway'>
+                                    <img src="https://downloadr2.apkmirror.com/wp-content/uploads/2018/11/5bffa628baff0.png"
+                                        alt="Subway Surfers">
+                                    <div class="game-category">Strategy</div>
+                                    <h3>Play Subway Surfers</h3>
+                                </a>
+                            </div>
+
+                            <div class="gamecard" data-category="strategy">
+                                <a href="game.html" class="game-card" data-game-id='love'>
+                                    <img src="lovebubbles200.webp" width="620px" alt="Love Bubble">
+                                    <div class="game-category">Strategy</div>
+                                    <h3>Play Love Bubble</h3>
+                                </a>
+                            </div>
+
+                            <div class="gamecard" data-category="strategy">
+                                <a href="game.html" class="game-card" data-game-id='mix-match'>
+                                    <img src="games/mix&match/img/halloween.jpg" alt="Mix & Match">
+                                    <div class="game-category">Strategy</div>
+                                    <h3>Play Mix & Match</h3>
+                                </a>
+                            </div>
+
+                            <!-- Action Games -->
+                            <div class="gamecard" data-category="action">
+                                <a href="game.html" class="game-card" data-game-id='archer'>
+                                    <img src="https://play-lh.googleusercontent.com/Xgr4WCjbAKPEVUjtNOoPQpCvkW8US3Lk4pgg1gN7pRapscQ_8Xrc6-uakEYQPd6gQZ_6"
+                                        alt="Archer Hero">
+                                    <div class="game-category">Action</div>
+                                    <h3>Play Archer Hero</h3>
+                                </a>
+                            </div>
+
+                            <div class="gamecard" data-category="action">
+                                <a href="game.html" class="game-card" data-game-id="miami-crime">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkcv1wqI0aSR0MuDRvOk_ZEngcZ9qf2r_7Eg&s"
+                                        alt="Miami Crime Simulator 3D">
+                                    <div class="game-category">Action</div>
+                                    <h3>Play Miami Crime Simulator 3D</h3>
+                                </a>
+                            </div>
+
+
+                            <!-- Racing Games -->
+                            <div class="gamecard" data-category="racing">
+                                <a href="game.html" class="game-card" data-game-id='traffic-jam-3d'>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf-PDRFohPHOd3aE9BsrtOkrSFi_ygCqbR3g&s"
+                                        width="600px" alt="Traffic Jam 3D">
+                                    <div class="game-category">Racing</div>
+                                    <h3>Play Traffic Jam 3D</h3>
+                                </a>
+                            </div>
+
+                            <div class="gamecard" data-category="racing">
+                                <a href="game.html" class="game-card" data-game-id='indian-uphill-bus-simulator-3d'>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzGvuRh78dpMbh-mZ6HGdCZCI74ZoQqjsBCg&s"
+                                        alt="Indian Uphill Bus Simulator 3D">
+                                    <div class="game-category">Racing</div>
+                                    <h3>Indian Uphill Bus Simulator 3D</h3>
+                                </a>
+                            </div>
+
+                            <div class="gamecard" data-category="racing">
+                                <a href="game.html" class="game-card" data-game-id="bicycle-stunts-3d">
+                                    <img src="https://play-lh.googleusercontent.com/UOPYEbybhENEOtch88M7Vw4FxAY8syWAR9q-Fn57zIPj_0ik4pFybPqKR9mOxsKynE54=w526-h296-rw"
+                                        alt="Bicycle Stunts 3D">
+                                    <div class="game-category">Racing</div>
+                                    <h3>Play Bicycle Stunts 3D</h3>
+                                </a>
+                            </div>
+
+                            <div class="gamecard" data-category="racing">
+                                <a href="game.html" class="game-card" data-game-id="furious-racing-3d">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0hbCvJQL8RHYCOCPR0WswWRnaBfSyPggldA&s"
+                                        alt="Furious Racing 3D">
+                                    <div class="game-category">Racing</div>
+                                    <h3>Play Furious Racing 3D</h3>
+                                </a>
+                            </div>
+
+                            <div class="gamecard" data-category="racing">
+                                <a href="game.html" class="game-card" data-game-id="kart-race-3d">
+                                    <img src="https://static.keygames.com/0/114640/100387/1024x1024/kart-race-3d.webp"
+                                        alt="Kart Race 3D">
+                                    <div class="game-category">Racing</div>
+                                    <h3>Play Kart Race 3D</h3>
+                                </a>
+                            </div>
+
+                            <div class="gamecard" data-category="racing">
+                                <a href="game.html" class="game-card" data-game-id="NeedForSpeed">
+                                    <img src="needforspeed.avif" alt="Need for Speed">
+                                    <div class="game-category">Racing</div>
+                                    <h3>Play Need for Speed</h3>
+                                </a>
+                            </div>
+
+                            <div class="gamecard" data-category="racing">
+                                <a href="game.html?id=indian-bus" class="game-card">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOBJtvDznfBQ4HU4jP9rej7jLKPMnzSQf4cQ&s"
+                                        alt="Indian Uphill Bus Simulator 3D">
+                                    <div class="game-category">Racing</div>
+                                    <h3>Play Indian Uphill Bus Simulator 3D</h3>
+                                </a>
+                            </div>
+
+                            <div class="gamecard" data-category="racing">
+                                <a href="game.html?id=indian-truck" class="game-card">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ28Pcsy6nxPPCbjSntSxSYTEGJ2M-6zXzwyVWZL_A_YDJdySv6ShfP7KttLNRkgA74G9I&usqp=CAU"
+                                        alt="Indian Truck Simulator 3D">
+                                    <div class="game-category">Racing</div>
+                                    <h3>Play Indian Truck Simulator 3D</h3>
+                                </a>
+                            </div>
+
+                            <div class="gamecard" data-category="racing">
+                                <a href="game.html?id=mega-ramp" class="game-card">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh80IgcO98MjtVAm0scGyX0hlfnuYr-5XULA&s"
+                                        alt="Mega Ramp Car Stunts">
+                                    <div class="game-category">Racing</div>
+                                    <h3>Play Mega Ramp Car Stunts</h3>
+                                </a>
+                            </div>
+
+                        </div>
+                        <button class="slider-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </section>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logo">
+                <div class=".logo-img">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="250" height="70" viewBox="0 0 360 100">
+                        <!-- Game Controller Icon -->
+                        <g>
+                            <ellipse cx="50" cy="50" rx="32" ry="32" fill="url(#grad1)" />
+                            <rect x="31" y="40" width="38" height="18" rx="9" fill="#fbf4f4" stroke="#e995b6"
+                                stroke-width="2" />
+                            <circle cx="42" cy="49" r="3" fill="#c6534b" />
+                            <circle cx="58" cy="49" r="3" fill="#e8b832" />
+                            <circle cx="43.5" cy="58.5" r="2.5" fill="#44bad7" />
+                            <circle cx="56.5" cy="58.5" r="2.5" fill="#f0e097" />
+                        </g>
+                        <text x="85" y="62" font-family="'Open Sans', Arial, sans-serif" font-weight="bold"
+                            font-size="38" fill="url(#grad2)" letter-spacing="2">
+                            zingo.gg
+                        </text>
+                        <defs>
+                            <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#e995b6" />
+                                <stop offset="100%" stop-color="#c6534b" />
+                            </linearGradient>
+                            <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#e995b6" />
+                                <stop offset="100%" stop-color="#c6534b" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                </div>
+            </div>
+            <p class="footer-description">
+                Welcome to our online gaming hub, where the excitement never stops! Dive into a world of endless fun
+                with over 1000 free online games ready for you to play. Whether you're a casual gamer or a dedicated
+                enthusiast, our diverse collection offers a thrilling array of choices. Join us and explore the joy of
+                gaming without any cost - it's all about play, enjoyment, and a community that shares the passion for
+                online gaming!
+            </p>
+        </div>
+        <div class="footer-bottom">
+            <!-- <div class="footer-category"> -->
+            <!-- <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Adventure</a></li>
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Strategy</a></li>
+                    <li><a href="#">Puzzle & Logic</a></li>
+                </ul> -->
+            <!-- </div> -->
+            <div class="footer-links">
+                <h3>Other Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow On</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61574228525832" class="social-icon"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <!-- <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a> -->
+                    <a href="https://www.youtube.com/@Zingogg" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <h3>Support</h3>
+                <p>Contact Us : support@zingo.gg</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced Search Functionality -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const games = [
+                { name: "Temple Run 2", image: "https://m.media-amazon.com/images/I/71UQemxXKdL._SY342_.jpg", id: "temple" },
+                { name: "Indian Uphill Bus Simulator 3D", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOBJtvDznfBQ4HU4jP9rej7jLKPMnzSQf4cQ&s", id: "indian-bus" },
+                { name: "Indian Truck Simulator 3D", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ28Pcsy6nxPPCbjSntSxSYTEGJ2M-6zXzwyVWZL_A_YDJdySv6ShfP7KttLNRkgA74G9I&usqp=CAU", id: "indian-truck" },
+                { name: "Mega Ramp Car Stunts", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh80IgcO98MjtVAm0scGyX0hlfnuYr-5XULA&s", id: "mega-ramp" },
+                { name: "Miami Crime Simulator 3D", image: "https://assets.bgames.com/2/116532/102534/1200x630/mega-ramp-car-stunts.webp", id: "miami-crime" },
+                { name: "Mix Match", image: "games/mix&match/img/halloween.jpg", id: "mix-match" },
+                { name: "Guess the Number", image: "games/random number/guess.jpeg", id: "guess" },
+                { name: "Subway Surfer", image: "https://downloadr2.apkmirror.com/wp-content/uploads/2018/11/5bffa628baff0.png", id: "subway" },
+                { name: "Archer Hero", image: "https://play-lh.googleusercontent.com/Xgr4WCjbAKPEVUjtNOoPQpCvkW8US3Lk4pgg1gN7pRapscQ_8Xrc6-uakEYQPd6gQZ_6", id: "archer" },
+                { name: "Love Bubbles", image: "lovebubbles200.webp", id: "love" },
+                { name: "Angry Birds", image: "images.jpeg", id: "angrybird" },
+                { name: "Among Us", image: "https://upload.wikimedia.org/wikipedia/en/9/9a/Among_Us_cover_art.jpg", id: "amongus" },
+
+                { name: "Candy Crush", image: "Candy.png", id: "candycrush" },
+                { name: "Traffic Jam 3D", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf-PDRFohPHOd3aE9BsrtOkrSFi_ygCqbR3g&s", id: "traffic-jam-3d" },
+                { name: "Indian Uphill Bus Simulator 3D", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzGvuRh78dpMbh-mZ6HGdCZCI74ZoQqjsBCg&s", id: "indian-uphill-bus-simulator-3d" },
+                { name: "Bicycle Stunts 3D", image: "https://play-lh.googleusercontent.com/UOPYEbybhENEOtch88M7Vw4FxAY8syWAR9q-Fn57zIPj_0ik4pFybPqKR9mOxsKynE54=w526-h296-rw", id: "bicycle-stunts-3d" },
+                { name: "Furious Racing 3D", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0hbCvJQL8RHYCOCPR0WswWRnaBfSyPggldA&s", id: "furious-racing-3d" },
+                { name: "Kart Race 3D", image: "https://static.keygames.com/0/114640/100387/1024x1024/kart-race-3d.webp", id: "kart-race-3d" },
+                { name: "Need For Speed", image: "needforspeed.avif", id: "NeedForSpeed" },
+            ];
+
+            const searchBar = document.getElementById("search-bar");
+            const searchResults = document.getElementById("search-results");
+
+            // Dynamic search bar
+            searchBar.addEventListener("input", (e) => {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = ""; // Clearing old results
+                if (query) {
+                    const filteredGames = games.filter((game) =>
+                        game.name.toLowerCase().includes(query)
+                    );
+                    if (filteredGames.length > 0) {
+                        searchResults.classList.remove("hidden");
+                        filteredGames.slice(0, 5).forEach((game) => {
+                            const gameCard = document.createElement("a");
+                            gameCard.href = "#";
+                            gameCard.className = "game-card";
+                            gameCard.setAttribute("data-game-id", game.id);
+                            gameCard.innerHTML = `
+                                <img src="${game.image}" alt="${game.name}" class="search-suggestion-img">
+                                <span>${game.name}</span>
+                            `;
+                            searchResults.appendChild(gameCard);
+                        });
+                        // Add click listeners for dynamic game cards
+                        const gameCards = document.querySelectorAll("#search-results .game-card");
+                        gameCards.forEach((card) => {
+                            card.addEventListener("click", function (e) {
+                                e.preventDefault();
+                                const gameId = this.getAttribute("data-game-id");
+                                window.location.href = `game.html?game=${gameId}`;
+                                // Navigating to game page with gameId
+                            });
+                        });
+                    } else {
+                        searchResults.classList.add("hidden");
+                    }
+                } else {
+                    searchResults.classList.add("hidden");
+                }
+            });
+
+            // Hide search results when clicking outside
+            document.addEventListener("click", function (e) {
+                if (!searchBar.contains(e.target) && !searchResults.contains(e.target)) {
+                    searchResults.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const categoryCards = document.querySelectorAll('.category-card');
+            const gameCards = document.querySelectorAll('.gamecard');
+
+            // Set default active category
+            document.querySelector('.category-card[data-category="all"]').classList.add('active');
+
+            // Category click handler
+            categoryCards.forEach(card => {
+                card.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Remove active class from all category cards
+                    categoryCards.forEach(c => c.classList.remove('active'));
+
+                    // Add active class to clicked card
+                    this.classList.add('active');
+
+                    const selectedCategory = this.dataset.category;
+
+                    // Filter games
+                    gameCards.forEach(game => {
+                        if (selectedCategory === 'all' || game.dataset.category === selectedCategory) {
+                            game.style.display = 'block';
+                        } else {
+                            game.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        const gameCards = document.querySelectorAll('.game-card');
+        gameCards.forEach(card => {
+            card.addEventListener('click', function (e) {
+                e.preventDefault();
+                const gameId = this.getAttribute('data-game-id');
+                window.location.href = `game.html?game=${gameId}`;
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

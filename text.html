@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Nav Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f4f4f4;
+      padding: 1rem;
+      position: relative;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 1rem;
+    }
+
+    nav ul li a {
+      font-weight: 600;
+      padding: 0.5rem;
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #e76a9b;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+
+      nav ul.open {
+        display: flex;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="mobile-menu-toggle">&#9776;</div>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.querySelector('.menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
