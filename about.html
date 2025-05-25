@@ -51,14 +51,14 @@
 
             </div>
 
-          
-    <!-- <div class="logo-text">
+
+            <!-- <div class="logo-text">
         <span>Online</span>
         <span>Gaming Website</span>
       </div>
     </div> -->
-  
-    <!-- <nav>
+
+            <!-- <nav>
       <div class="mobile-menu-toggle"> #</i></div>
       <ul class="menu">
         <li><a href="#">Home</a></li>
@@ -67,97 +67,100 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </nav> -->
-  <style>
-    /* body {
+            <style>
+                /* body {
       margin: 0;
       font-family: Arial, sans-serif;
     } */
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* background-color: #f4f4f4; */
-  padding: 1rem;
-  position: relative;
-}
+                nav {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    /* background-color: #f4f4f4; */
+                    padding: 1rem;
+                    position: relative;
+                }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+                nav ul {
+                    display: flex;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
 
-nav ul li {
-  margin: 0 1rem;
-}
+                nav ul li {
+                    margin: 0 1rem;
+                }
 
-nav ul li a {
-  font-weight: 600;
-  padding: 0.5rem;
-  text-decoration: none;
-  color: #333;
-  transition: color 0.3s;
-}
+                nav ul li a {
+                    font-weight: 600;
+                    padding: 0.5rem;
+                    text-decoration: none;
+                    color: #333;
+                    transition: color 0.3s;
+                }
 
-nav ul li a:hover {
-  color: #e76a9b;
-}
+                nav ul li a:hover {
+                    color: #e76a9b;
+                }
 
-.mobile-menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin-left: 35vw;
-}
+                .mobile-menu-toggle {
+                    display: none;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    margin-left: 35vw;
+                }
 
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #fff;
-    position: absolute;
-    top: 100%;
-    right: 0.0001rem; 
-    left: auto;         /* Prevent left edge alignment */
-    width: 30vw;        /* Prevent overflow */
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    box-sizing: border-box;
-    border-radius: 0.5rem;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-  }
+                @media (max-width: 768px) {
+                    nav ul {
+                        display: none;
+                        flex-direction: column;
+                        background-color: #fff;
+                        position: absolute;
+                        top: 100%;
+                        right: 0.0001rem;
+                        left: auto;
+                        /* Prevent left edge alignment */
+                        width: 30vw;
+                        /* Prevent overflow */
+                        padding: 1rem;
+                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                        box-sizing: border-box;
+                        border-radius: 0.5rem;
+                        overflow-x: hidden;
+                        /* Prevent horizontal scroll */
+                    }
 
-  nav ul.open {
-    display: flex;
-  }
+                    nav ul.open {
+                        display: flex;
+                    }
 
-  .mobile-menu-toggle {
-    display: block;
-  }
-}
+                    .mobile-menu-toggle {
+                        display: block;
+                    }
+                }
+                
+            </style>
 
-  </style>
+            <nav>
+                <div class="mobile-menu-toggle">&#9776;</div>
+                <ul class="menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <!-- <li><a href="#">Contact</a></li> -->
+                </ul>
+            </nav>
 
-  <nav>
-    <div class="mobile-menu-toggle">&#9776;</div>
-    <ul class="menu">
-      <li><a href="/">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="privacy-policy.html">Privacy Policy</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+            <script>
+                const toggle = document.querySelector('.mobile-menu-toggle');
+                const menu = document.querySelector('.menu');
 
-  <script>
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const menu = document.querySelector('.menu');
-
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('open');
-    });
-  </script>
+                toggle.addEventListener('click', () => {
+                    menu.classList.toggle('open');
+                });
+            </script>
 
     </header>
 
@@ -168,7 +171,9 @@ nav ul li a:hover {
                 <div class="container">
                     <h1>About Us</h1>
                     <p class="intro">
-                        Welcome to <strong>Zingo.gg</strong> – your ultimate destination for free online gaming! We offer a diverse collection of over multiple games, including arcade, match-3, bubble shooter, racing, and more—all accessible directly from your browser without downloads or installations.
+                        Welcome to <strong>Zingo.gg</strong> – your ultimate destination for free online gaming! We
+                        offer a diverse collection of over multiple games, including arcade, match-3, bubble shooter,
+                        racing, and more—all accessible directly from your browser without downloads or installations.
                     </p>
 
                     <div class="feature">
@@ -238,7 +243,7 @@ nav ul li a:hover {
                                     </linearGradient>
                                 </defs>
                             </svg>
-        
+
                         </div>
                         <!-- <div class="logo-text">
                             <span>Online</span>
@@ -246,15 +251,19 @@ nav ul li a:hover {
                         </div> -->
                     </div>
                     <p class="footer-description">
-                        Welcome to our online gaming hub, where the excitement never stops! Dive into a world of endless fun
-                        with over 1000 free online games ready for you to play. Whether you're a casual gamer or a dedicated
-                        enthusiast, our diverse collection offers a thrilling array of choices. Join us and explore the joy of
-                        gaming without any cost - it's all about play, enjoyment, and a community that shares the passion for
+                        Welcome to our online gaming hub, where the excitement never stops! Dive into a world of endless
+                        fun
+                        with over 1000 free online games ready for you to play. Whether you're a casual gamer or a
+                        dedicated
+                        enthusiast, our diverse collection offers a thrilling array of choices. Join us and explore the
+                        joy of
+                        gaming without any cost - it's all about play, enjoyment, and a community that shares the
+                        passion for
                         online gaming!
                     </p>
                 </div>
                 <div class="footer-bottom">
-                    <div class="footer-category">
+                    <!-- <div class="footer-category">
                         <h3>Categories</h3>
                         <ul>
                             <li><a href="#">Sports</a></li>
@@ -263,12 +272,12 @@ nav ul li a:hover {
                             <li><a href="#">Strategy</a></li>
                             <li><a href="#">Puzzle & Logic</a></li>
                         </ul>
-                    </div>
+                    </div> -->
                     <div class="footer-links">
-                        <h3>Other Links</h3> 
+                        <h3>Other Links</h3>
                         <ul>
                             <li><a href="#">Home</a></li>
-                            <li><a href="#">Disclaimer</a></li>
+                            <!-- <li><a href="#">Disclaimer</a></li> -->
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">About</a></li>
                         </ul>
@@ -276,19 +285,19 @@ nav ul li a:hover {
                     <div class="footer-social">
                         <h3>Follow On</h3>
                         <div class="social-icons">
-                            <a href="https://www.facebook.com/profile.php?id=61574228525832" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61574228525832" class="social-icon"><i
+                                    class="fab fa-facebook-f"></i></a>
                             <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.youtube.com/@socialmaster-o4j" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.youtube.com/@Zingogg" class="social-icon"><i
+                                    class="fab fa-youtube"></i></a>
                         </div>
                     </div>
-        
+
                     <div class="footer-social">
                         <h3>Support</h3>
                         <p>Contact Us : support@zingo.gg</p>
-                        
-                
                     </div>
                 </div>
             </footer>
-        
+
         </section>
